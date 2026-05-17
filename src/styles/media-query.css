@@ -266,11 +266,8 @@
 
   #inicio h1 {
     font-size: 2.2rem !important;
-    font-weight: 800 !important;
     line-height: 1.2 !important;
     margin-bottom: 15px !important;
-    color: #ffffff !important;
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7) !important;
   }
 
   #inicio .desc p {
