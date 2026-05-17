@@ -1,0 +1,220 @@
+/* ==========================================================================
+   SEÇÃO SOBRE NÓS
+   ========================================================================== */
+#sobre-nos {
+  padding: 6rem 1.5rem;
+  position: relative;
+  z-index: 5;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.sobre-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* Grid Superior: Texto vs Card do Artigo */
+.sobre-projeto-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.sobre-texto-institucional .sobre-subtitle {
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: #6a6a8a;
+}
+
+.sobre-texto-institucional .sobre-title {
+  margin-top: 12px;
+  margin-bottom: 0;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: clamp(2.1rem, 4vw, 2.6rem);
+  letter-spacing: -0.01em;
+}
+
+.sobre-glow-bar {
+  margin-top: 16px;
+  margin-bottom: 24px;
+  width: 60px;
+  height: 3px;
+  background: #e8c97a;
+  box-shadow: 0 0 14px rgba(232, 201, 122, 0.6);
+  border-radius: 2px;
+}
+
+.sobre-paragrafo {
+  color: #ddd5c0;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.sobre-paragrafo strong {
+  color: #e8c97a;
+  font-weight: 500;
+}
+
+/* Card Lateral do Artigo */
+.sobre-artigo-card {
+  background-color: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(232, 201, 122, 0.15);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.artigo-badge {
+  position: absolute;
+  top: -12px;
+  left: 32px;
+  background: #e8c97a;
+  color: #080a18;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+}
+
+.sobre-artigo-card h3 {
+  color: #ffffff;
+  font-size: 1.6rem;
+  margin: 8px 0 12px 0;
+}
+
+.sobre-artigo-card p {
+  color: #9090b0;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.btn-download-artigo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: transparent;
+  border: 1px solid #e8c97a;
+  color: #e8c97a;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-download-artigo:hover {
+  background-color: #e8c97a;
+  color: #080a18;
+  box-shadow: 0 0 15px rgba(232, 201, 122, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Parte Inferior: Integrantes */
+.sobre-equipe-titulo {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.sobre-equipe-titulo h3 {
+  color: #ffffff;
+  font-size: 1.6rem;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.sobre-equipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 32px;
+}
+
+.perfil-card {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  transition: transform 0.3s ease;
+}
+
+.perfil-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.perfil-avatar-wrapper {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid rgba(232, 201, 122, 0.3);
+}
+
+.perfil-foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.perfil-info {
+  flex: 1;
+}
+
+.perfil-nome {
+  color: #ffffff;
+  font-size: 1.25rem;
+  margin: 0 0 4px 0;
+  font-weight: 600;
+}
+
+.perfil-cargo {
+  color: #e8c97a;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.perfil-descricao {
+  color: #9090b0;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsividade para Telas Menores */
+@media (max-width: 900px) {
+  .sobre-projeto-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sobre-equipe-grid {
+    grid-template-columns: 1fr;
+  }
+  .perfil-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 20px;
+  }
+}

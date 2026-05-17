@@ -1,0 +1,101 @@
+#inicio {
+  height: 100vh;
+
+  background: linear-gradient(
+    to bottom,
+    #10121f 0%,
+    rgba(16, 18, 31, 0.15) 15%,
+    rgba(16, 18, 31, 0.05) 40%,
+    rgba(16, 18, 31, 0.05) 60%,
+    rgba(16, 18, 31, 0.2) 80%,
+    #10121f 100%
+  );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 20px;
+
+  flex-direction: column;
+  text-align: center;
+}
+#inicio::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    #10121f 0%,
+    transparent 18%,
+    transparent 72%,
+    #10121f 100%
+  );
+
+  pointer-events: none;
+}
+.video-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-bg {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  filter: blur(2px);
+}
+
+#inicio h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  color: white;
+  text-shadow: 0 -5px #ffe8bb7b;
+}
+#inicio p {
+  color: #e4d4b9;
+  font-size: 15pt;
+}
+.desc {
+  padding: 20px;
+  display: block;
+  width: 100%;
+  background: radial-gradient(
+    ellipse 20% 100% at center,
+    #10121f,
+    rgba(16, 18, 31, 0.149)
+  );
+}
+#inicio a {
+  color: #e4d4b9;
+  background-color: #4047764c;
+  border: 5px solid rgba(0, 0, 0, 0.4); /* 10px era exagerado */
+  border-radius: 30px;
+  padding: 13px 30px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  font-size: 15pt;
+}
+#inicio a {
+  color: #e4d4b9;
+  text-decoration: none;
+}
+
+#inicio a:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.title {
+  text-align: center;
+  text-transform: uppercase;
+
+  font-size: 25pt;
+
+  color: white;
+  text-shadow: 0 -5px #ffe8bb7b;
+}

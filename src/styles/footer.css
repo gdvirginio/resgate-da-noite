@@ -1,0 +1,146 @@
+/* ==========================================================================
+   SEÇÃO CTA (CHAMADA PARA O FORMULÁRIO)
+   ========================================================================== */
+#cta-formulario {
+  padding: 5rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  position: relative;
+  z-index: 5;
+}
+
+.cta-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-texto {
+  color: #9090b0;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* BOTÃO INTEGRADO COM O DESIGN SYSTEM DO INÍCIO */
+.btn-cta-forms {
+  display: inline-block;
+  color: #e4d4b9;
+  background-color: #4047764c;
+  border: 5px solid rgba(0, 0, 0, 0.4);
+  border-radius: 30px;
+  padding: 13px 30px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  font-size: 15pt;
+}
+
+.btn-cta-forms:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   RODAPÉ FINAL (FOOTER)
+   ========================================================================== */
+#rodape {
+  background-color: #04050d;
+  padding: 4rem 1.5rem 3rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.rodape-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.rodape-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.rodape-bloco-info .rodape-logo-texto {
+  color: #ffffff;
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.rodape-bloco-info .rodape-escola {
+  color: #e8c97a;
+  font-size: 13px;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.rodape-bloco-info .copyright {
+  color: #52526b;
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.rodape-bloco-tecnologias h4 {
+  color: #ffffff;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.rodape-bloco-tecnologias .tecnologias-texto {
+  color: #7c7c9a;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.tags-tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-tech {
+  font-size: 11px;
+  color: #ddd5c0;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 4px 10px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.tag-tech:hover {
+  background-color: rgba(232, 201, 122, 0.05);
+  border-color: rgba(232, 201, 122, 0.2);
+  color: #e8c97a;
+}
+
+@media (max-width: 768px) {
+  .rodape-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .tags-tecnologias {
+    justify-content: center;
+  }
+}

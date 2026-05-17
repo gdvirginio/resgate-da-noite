@@ -1,0 +1,147 @@
+#definicao {
+  position: relative;
+  padding: 100px 0;
+}
+
+/* IMAGEM */
+.img-definicao {
+  height: 500px;
+  width: 80%;
+  border-top-left-radius: 120px;
+  border-bottom-left-radius: 120px;
+
+  background-image:
+    linear-gradient(to left, #10121f 10%, #10121fbe 20%, rgba(0, 0, 0, 0) 70%),
+    url("../imgs/definicao-img.png");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* TEXTO */
+.texto-definicao {
+  position: absolute;
+  top: -37%;
+  right: 10%;
+
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-right: 40px;
+}
+
+.texto-definicao h2 {
+  color: white;
+  font-size: 75pt;
+
+  text-shadow: 0 -5px #ffe8bb7b;
+
+  word-break: normal;
+}
+
+.circle-definicao {
+  position: absolute;
+  top: 25%;
+  right: 5%;
+  background-color: #171b37;
+  border-radius: 100%;
+  width: 250px;
+  height: 250px;
+}
+.circle-definicao-2 {
+  position: absolute;
+  top: 25%;
+  right: 4%;
+  background-color: transparent;
+  border: 5px solid #404776;
+  border-radius: 100%;
+  width: 250px;
+  height: 250px;
+}
+.circle-text {
+  position: absolute;
+  top: 29%;
+  right: 7%;
+  font-size: 18pt;
+  text-align: justify;
+  color: white;
+  width: 320px;
+}
+
+/*CARDS - CAUSAS*/
+#causas {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.causa-card {
+  background-color: rgba(228, 212, 185, 0.05);
+  border: 1px solid rgba(228, 212, 185, 0.15);
+  border-radius: 12px;
+  padding: 20px;
+  color: #e4d4b9;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  max-width: 500px;
+  max-height: 500px;
+}
+
+.causa-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.causa-card img {
+  width: 100%;
+  object-fit: cover;
+  margin-top: 10px;
+  border-radius: 8px;
+  opacity: 0.9;
+}
+.texto-definicao h2 {
+  font-size: clamp(3rem, 8vw, 6rem); /* Reduz os 75pt suavemente */
+}
+
+@media (max-width: 900px) {
+  #definicao {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 20px;
+  }
+
+  .img-definicao {
+    width: 100%;
+    height: 300px;
+    border-radius: 20px;
+    background-image: url("../imgs/definicao-img.png"); /* Tira o gradiente que cortava a imagem no mobile */
+  }
+
+  .texto-definicao {
+    position: relative;
+    top: 0;
+    right: 0;
+    padding: 20px 0;
+    justify-content: center;
+  }
+
+  /* Oculta os círculos decorativos complexos no celular para focar na leitura */
+  .circle-definicao,
+  .circle-definicao-2 {
+    display: none;
+  }
+
+  .circle-text {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+}

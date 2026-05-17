@@ -1,0 +1,261 @@
+/* ==========================================================================
+   SEÇÃO PRINCIPAL (SOLUÇÕES)
+   ========================================================================== */
+#solucoes {
+  position: relative;
+  z-index: 10; /* Aumentado para garantir que fique acima de overlays e vídeos de fundo */
+  padding: 6rem 1.5rem; /* 96px */
+  pointer-events: auto; /* Garante que a seção aceite interações do mouse */
+}
+
+@media (min-width: 768px) {
+  #solucoes {
+    padding: 7rem 1.5rem; /* 112px */
+  }
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 11;
+}
+
+/* ==========================================================================
+   HEADER DA SEÇÃO
+   ========================================================================== */
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-header .subtitle {
+  font-family: "DM Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: #6a6a8a;
+  margin-top: 10px;
+}
+
+.section-header .title {
+  font-family: "Playfair Display", serif;
+  margin-top: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: clamp(2.4rem, 5vw, 3rem);
+  letter-spacing: -0.01em;
+}
+
+.section-header .glow-bar {
+  margin-top: 20px;
+  width: 80px;
+  height: 3px;
+  background: #e8c97a;
+  box-shadow:
+    0 0 14px rgba(232, 201, 122, 0.7),
+    0 0 28px rgba(232, 201, 122, 0.35);
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   ACCORDION CONTAINER
+   ========================================================================== */
+.accordion-container {
+  margin-top: 3.5rem;
+  position: relative;
+  z-index: 12;
+}
+
+@media (min-width: 768px) {
+  .accordion-container {
+    margin-top: 4rem;
+  }
+}
+
+/* ==========================================================================
+   ACCORDION ITENS (CARDS)
+   ========================================================================== */
+.accordion-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition:
+    background-color 0.3s ease-out,
+    border-color 0.3s ease-out,
+    box-shadow 0.3s ease-out,
+    margin 0.3s ease-out;
+}
+
+/* Estado Ativo / Aberto */
+.accordion-item.is-open {
+  background-color: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 40px -20px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   BOTÃO DE GATILHO (HEADER DO ACCORDION)
+   ========================================================================== */
+.accordion-header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 0.75rem;
+  text-align: left;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  z-index: 15;
+  pointer-events: auto; /* Força o botão a ser totalmente clicável */
+  user-select: none; /* Impede que o texto fique azul ao clicar rápido */
+  -webkit-user-select: none;
+}
+
+@media (min-width: 768px) {
+  .accordion-header {
+    gap: 1.5rem;
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+/* ==========================================================================
+   ELEMENTOS INTERNOS DO BOTÃO
+   ========================================================================== */
+
+/* Numeração (01, 02, etc) */
+.accordion-item .number {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 32px;
+  flex-shrink: 0;
+  width: 3.5rem;
+  color: #6a6a8a;
+  transition:
+    color 0.3s ease-out,
+    transform 0.3s ease-out,
+    text-shadow 0.3s ease-out;
+}
+
+@media (min-width: 768px) {
+  .accordion-item .number {
+    width: 4rem;
+  }
+}
+
+.accordion-item.is-open .number {
+  color: #e8c97a;
+  transform: scale(1.05);
+  text-shadow:
+    0 0 18px rgba(232, 201, 122, 0.6),
+    0 0 32px rgba(232, 201, 122, 0.25);
+}
+
+/* Título Textual */
+.accordion-item .item-title {
+  font-family: "DM Sans", sans-serif;
+  flex: 1 1 0%; /* CORRIGIDO: Removido flex-1 inválido */
+  color: rgba(221, 213, 192, 0.85);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.35;
+  transition: color 0.3s ease;
+}
+
+.accordion-item.is-open .item-title {
+  color: #ffffff;
+}
+
+/* Efeitos de Hover (Quando o card NÃO está aberto) */
+.accordion-item:not(.is-open):hover .number {
+  color: #ddd5c0;
+}
+
+.accordion-item:not(.is-open):hover .item-title {
+  color: #ffffff;
+}
+
+/* Ícone da Seta (Círculo externo) */
+.accordion-item .arrow-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  color: #ddd5c0;
+  transition:
+    background-color 0.3s ease-out,
+    border-color 0.3s ease-out,
+    color 0.3s ease-out;
+}
+
+@media (min-width: 768px) {
+  .accordion-item .arrow-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+.accordion-item.is-open .arrow-icon {
+  background-color: rgba(232, 201, 122, 0.15);
+  border-color: rgba(232, 201, 122, 0.6);
+  color: #e8c97a;
+}
+
+/* Seta Interna (SVG) */
+.accordion-item .arrow-icon svg {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-item.is-open .arrow-icon svg {
+  transform: rotate(180deg);
+}
+
+/* ==========================================================================
+   MECANISMO DE EXPANSÃO (CSS GRID ANIMADO)
+   ========================================================================== */
+.accordion-content-wrapper {
+  display: grid;
+  grid-template-rows: 0fr; /* Começa totalmente colapsado (altura 0) */
+  transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.accordion-item.is-open .accordion-content-wrapper {
+  grid-template-rows: 1fr; /* Expande dinamicamente para o tamanho do conteúdo */
+}
+
+/* Bloco de Conteúdo Interno */
+.accordion-content {
+  min-height: 0; /* Essencial para o truque do grid-template-rows funcionar */
+}
+
+.accordion-content p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #ddd5c0;
+  margin: 0;
+  padding-right: 1rem;
+  padding-bottom: 1.5rem;
+  padding-left: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .accordion-content p {
+    padding-right: 2rem;
+    padding-left: 100px; /* Alinha o texto pulando o número da esquerda */
+  }
+}

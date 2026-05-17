@@ -1,0 +1,832 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <link rel="shortcut icon" href="src/imgs/Logo.png" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="src/styles/root.css" />
+    <link rel="stylesheet" href="src/styles/open-sans.css" />
+    <link rel="stylesheet" href="src/styles/nav.css" />
+    <link rel="stylesheet" href="src/styles/causas.css" />
+    <link rel="stylesheet" href="src/styles/inicio.css" />
+    <link rel="stylesheet" href="src/styles/cards.css" />
+    <link rel="stylesheet" href="src/styles/dashboard.css" />
+    <link rel="stylesheet" href="src/styles/mini-section.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.css"
+    />
+    <link rel="stylesheet" href="src/styles/image-comparisons.css" />
+    <link rel="stylesheet" href="src/styles/impactos.css" />
+    <link rel="stylesheet" href="src/styles/solucoes.css">
+    <link rel="stylesheet" href="src/styles/sobre-nos.css">
+    <link rel="stylesheet" href="src/styles/footer.css">
+    <link rel="stylesheet" href="src/styles/simulador.css">
+
+    <link rel="stylesheet" href="src/styles/media-query.css">
+
+    <title>Resgate da Noite</title>
+  </head>
+  <body>
+    <!-- HEADER/NAV -->
+    <header>
+      <img src="src/imgs/Logo.png" alt="" />
+      <h1>Resgate da Noite</h1>
+
+      <button class="hamburger" aria-label="Abrir menu de navegação">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+      <nav>
+        <a href="#inicio">INÍCIO</a>
+        <a href="#definicao">DEFINIÇÃO</a>
+        <a href="#causas">CAUSAS</a>
+        <a href="#impactos">IMPACTOS</a>
+        <a href="#solucoes">SOLUÇÕES</a>
+        <a href="#respostas">RESPOSTAS</a>
+        <a href="#sobre-nos">SOBRE NÓS</a>
+        <a
+          class="button"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfMpGOoivdtLeNdx_k7RC8SuZtHq3N3GoI91ykCIIpgFHyUOw/viewform?usp=dialog"
+          target="_blank"
+          title="Ir para o formulário"
+          >Formulário ➜</a
+        >
+      </nav>
+    </header>
+
+    <!-- INICIO -->
+    <section id="inicio" class="">
+      <div class="video-container">
+        <video autoplay loop muted class="video-bg">
+          <source src="/src/videos/night_sky_bg.mp4" />
+        </video>
+      </div>
+      <div class="title">
+        <h1>A noite está sumindo</h1>
+      </div>
+      <div class="desc">
+        <p>
+          Prazer! Somos estudantes da Etec Dr. Ruth Cardoso.
+          <br />
+          Estamos realizando uma pesquisa sobre poluição luminosa e seus
+          impactos na saúde humana e nos ecossistemas.
+          <br />
+          Ao responder, você atua ajudando a embasar soluções tecnológicas e
+          sustentáveis para o planeta.
+        </p>
+      </div>
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSfMpGOoivdtLeNdx_k7RC8SuZtHq3N3GoI91ykCIIpgFHyUOw/viewform?usp=dialog"
+        target="_blank"
+        title="Ir para o formulário"
+        >Conheça nosso formulário</a
+      >
+    </section>
+
+    <!-- DEFINICAO -->
+    <section id="definicao" class="reveal">
+      <!-- Imagem de fundo -->
+      <div class="img-definicao"></div>
+
+      <!-- Texto principal -->
+      <div class="texto-definicao">
+        <h2>O QUE É?</h2>
+        <span class="section-title-line" style="margin-left: 16px"></span>
+      </div>
+
+      <!-- Círculos decorativos -->
+      <div class="circle-definicao"></div>
+      <div class="circle-definicao-2"></div>
+
+      <!-- Texto dentro do círculo -->
+      <div class="circle-text">
+        É quando o uso excessivo de luz altera os níveis naturais da
+        luminosidade durante o período noturno.
+      </div>
+
+      <div class="mini-section">
+        <p>ARRASTE PARA COMPARAR</p>
+      </div>
+
+      <div class="image-comparisons">
+        <div class="wrapper">
+          <!-- Container holding both images -->
+          <div class="images">
+            <div class="img-1">
+              <span class="label">Céu urbano</span>
+            </div>
+            <!-- First image container -->
+            <div class="img-2">
+              <span class="label">Céu preservado</span>
+            </div>
+            <!-- Second image container (overlay) -->
+          </div>
+
+          <!-- Slider control for adjusting image comparison -->
+          <div class="slider">
+            <!-- Drag line indicating the comparison boundary -->
+            <div class="drag-line">
+              <span></span>
+              <!-- Circular handle for dragging -->
+            </div>
+            <!-- Range input for controlling the slider -->
+            <input type="range" min="0" max="100" value="50" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAUSAS -->
+    <section id="causas" class="reveal">
+      <div class="causas-container">
+        <div class="section-title-wrap">
+          <h2 class="section-title font-display">
+            <span class="section-title-line"></span>
+            CAUSAS
+          </h2>
+          <p class="section-subtitle">
+            por que o céu noturno está desaparecendo
+          </p>
+        </div>
+
+        <div class="causas-grid" id="causas-grid">
+          <button
+            class="causa-card causa-reveal"
+            data-idx="0"
+            onclick="toggleCausa(0)"
+          >
+            <div class="causa-img-wrap">
+              <img
+                src="/src/imgs/card-causas-1.png"
+                alt="Excesso de iluminação urbana"
+                loading="lazy"
+              />
+              <span class="causa-num">01</span>
+            </div>
+            <div class="causa-body">
+              <div class="causa-icon icon-amber">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10.5c.8.8 1.5 1.5 1.5 2.5v1h5v-1c0-1 .7-1.7 1.5-2.5A6 6 0 0012 3z"
+                  />
+                </svg>
+              </div>
+              <h3 class="causa-title">Excesso de iluminação urbana</h3>
+              <p class="causa-short">Cidades brilham acima do necessário.</p>
+              <span class="causa-tag tag-urbano">Urbano</span>
+            </div>
+          </button>
+
+          <button
+            class="causa-card causa-reveal"
+            data-idx="1"
+            onclick="toggleCausa(1)"
+          >
+            <div class="causa-img-wrap">
+              <img
+                src="/src/imgs/card-causas-2.png"
+                alt="Luminárias mal direcionadas"
+                loading="lazy"
+              />
+              <span class="causa-num">02</span>
+            </div>
+            <div class="causa-body">
+              <div class="causa-icon icon-blue">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 20V5M6 11l6-6 6 6" />
+                </svg>
+              </div>
+              <h3 class="causa-title">Luminárias mal direcionadas</h3>
+              <p class="causa-short">Postes sem shields desperdiçam luz.</p>
+              <span class="causa-tag tag-infra">Infraestrutura</span>
+            </div>
+          </button>
+
+          <button
+            class="causa-card causa-reveal"
+            data-idx="2"
+            onclick="toggleCausa(2)"
+          >
+            <div class="causa-img-wrap">
+              <img
+                src="/src/imgs/card-causas-3.png"
+                alt="Publicidade luminosa excessiva"
+                loading="lazy"
+              />
+              <span class="causa-num">03</span>
+            </div>
+            <div class="causa-body">
+              <div class="causa-icon icon-purple">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="6" width="18" height="12" rx="2" />
+                  <path d="M8 21h8M12 18v3" />
+                </svg>
+              </div>
+              <h3 class="causa-title">Publicidade luminosa excessiva</h3>
+              <p class="causa-short">Outdoors digitais 24h sem regulação.</p>
+              <span class="causa-tag tag-urbano">Urbano</span>
+            </div>
+          </button>
+
+          <button
+            class="causa-card causa-reveal"
+            data-idx="3"
+            onclick="toggleCausa(3)"
+          >
+            <div class="causa-img-wrap">
+              <img
+                src="/src/imgs/card-causas-4.png"
+                alt="LEDs frios"
+                loading="lazy"
+              />
+              <span class="causa-num">04</span>
+            </div>
+            <div class="causa-body">
+              <div class="causa-icon icon-blue">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M10 13.5V5a2 2 0 114 0v8.5a4 4 0 11-4 0z" />
+                </svg>
+              </div>
+              <h3 class="causa-title">LEDs frios (azulados)</h3>
+              <p class="causa-short">Acima de 4000K se espalham mais.</p>
+              <span class="causa-tag tag-bio">Biológico</span>
+            </div>
+          </button>
+
+          <button
+            class="causa-card causa-reveal"
+            data-idx="4"
+            onclick="toggleCausa(4)"
+          >
+            <div class="causa-img-wrap">
+              <img
+                src="/src/imgs/card-causas-5.png"
+                alt="Sem controle de horário"
+                loading="lazy"
+              />
+              <span class="causa-num">05</span>
+            </div>
+            <div class="causa-body">
+              <div class="causa-icon icon-amber">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 2" />
+                </svg>
+              </div>
+              <h3 class="causa-title">Sem controle de horário</h3>
+              <p class="causa-short">Iluminação máxima a noite inteira.</p>
+              <span class="causa-tag tag-infra">Infraestrutura</span>
+            </div>
+          </button>
+        </div>
+
+        <div id="causa-painel" class="causa-painel">
+          <div class="causa-painel-inner">
+            <div id="painel-icone" class="painel-icone"></div>
+            <div class="painel-conteudo">
+              <h4 id="painel-titulo" class="painel-titulo font-display"></h4>
+              <p id="painel-texto" class="painel-texto"></p>
+              <div id="painel-stats" class="painel-stats"></div>
+            </div>
+            <button
+              class="painel-fechar"
+              onclick="fecharPainel()"
+              aria-label="Fechar"
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--IMPACTOS-->
+
+    <section id="impactos" class="reveal">
+      <div class="impactos-container">
+        <div class="section-title-wrap">
+          <h2 class="section-title font-display">
+            <span class="section-title-line"></span>
+            IMPACTOS
+          </h2>
+          <p class="section-subtitle">as consequências que não vemos</p>
+        </div>
+
+        <div class="impactos-grid">
+          <div class="impacto-card">
+            <div class="impacto-icone">
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#e8c97a"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+              </svg>
+            </div>
+            <div class="impacto-numero font-display">83%</div>
+            <div class="impacto-label">
+              da humanidade dorme sob céu com poluição luminosa
+            </div>
+            <p class="impacto-texto">
+              A exposição à luz artificial noturna suprime a melatonina,
+              aumentando riscos de insônia, depressão, obesidade e cânceres.
+            </p>
+          </div>
+
+          <div class="impacto-card">
+            <div class="impacto-icone">
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#e8c97a"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M22 9c-2 1-4 1-6 0-3-2-6-2-9 0-2 1-4 1-5 0v6c1 1 3 1 5 0 3-2 6-2 9 0 2 1 4 1 6 0V9z"
+                />
+              </svg>
+            </div>
+            <div class="impacto-numero font-display">450+</div>
+            <div class="impacto-label">
+              espécies animais afetadas diretamente
+            </div>
+            <p class="impacto-texto">
+              Aves migratórias perdem orientação, tartarugas marinhas desviam
+              das praias e insetos polinizadores morrem atraídos pelas fontes de
+              luz.
+            </p>
+          </div>
+
+          <div class="impacto-card impacto-card--expandivel" id="impacto-co2">
+            <div class="impacto-icone">
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#e8c97a"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z" />
+                <path d="M12 8v4l3 3" />
+                <path d="M8.5 8.5s.5-2 3.5-2 3.5 2 3.5 2" />
+              </svg>
+            </div>
+            <div class="impacto-numero font-display">8,64M</div>
+            <div class="impacto-label">
+              toneladas de CO₂ geradas por ano só pelo desperdício de iluminação
+              pública
+            </div>
+            <p class="impacto-texto">
+              30% de toda a luz emitida por luminárias externas é desperdiçada —
+              equivalente a 3,6 milhões de toneladas de carvão ou 12,9 milhões
+              de barris de petróleo por ano (IDA, 2007).
+            </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--SOLUÇÕES-->
+    <section id="solucoes" class="reveal">
+    <div class="container">
+      
+      <!-- Header -->
+      <div class="section-title-wrap">
+          <h2 class="section-title font-display">
+            <span class="section-title-line"></span>
+            SOLUÇÕES
+          </h2>
+          <p class="section-subtitle">
+            O caminho para resgatar a noite
+          </p>
+    </div>
+
+      <!-- Accordion -->
+      <div class="accordion-container">
+        
+        <!-- Item 01 (Começa Aberto) -->
+        <div class="accordion-item is-open">
+          <button class="accordion-header">
+            <span class="number">01</span>
+            <span class="item-title">Luminárias com direcionamento correto</span>
+            <span class="arrow-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+          </button>
+          <div class="accordion-content-wrapper">
+            <div class="accordion-content">
+              <p>Shields e armaduras full-cutoff direcionam 100% da luz para o solo, eliminando completamente o vazamento espúrio de luminosidade direcionada para cima e para o horizonte.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 02 -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span class="number">02</span>
+            <span class="item-title">Iluminação inteligente com sensores</span>
+            <span class="arrow-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+          </button>
+          <div class="accordion-content-wrapper">
+            <div class="accordion-content">
+              <p>Sensores de presença avançados e dimmers automáticos reduzem de forma programada a intensidade luminosa de vias públicas e pátios comerciais quando não há circulação de pessoas.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 03 -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span class="number">03</span>
+            <span class="item-title">Substituição por LEDs âmbar (2700K ou menos)</span>
+            <span class="arrow-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+          </button>
+          <div class="accordion-content-wrapper">
+            <div class="accordion-content">
+              <p>Luminárias de temperatura de cor quente (âmbar) dispersam consideravelmente menos partículas na atmosfera devido ao comprimento de onda e causam um impacto infinitamente menor sobre o ciclo biológico da fauna noturna.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 04 -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span class="number">04</span>
+            <span class="item-title">Regulamentação e legislação</span>
+            <span class="arrow-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+          </button>
+          <div class="accordion-content-wrapper">
+            <div class="accordion-content">
+              <p>Apoio e mobilização direcionada a leis municipais e decretos que limitem tetos de emissão por metro quadrado, vetem outdoors comerciais após a meia-noite e organizem zonas escuras protegidas.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 05 -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span class="number">05</span>
+            <span class="item-title">Educação e conscientização</span>
+            <span class="arrow-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </span>
+          </button>
+          <div class="accordion-content-wrapper">
+            <div class="accordion-content">
+              <p>Projetos científicos integrados como este desenvolvido na Etec Dr. Ruth Cardoso! O levantamento estatístico regional, a análise de dados e a ampla divulgação digital formam o alecerce fundamental para a mudança de comportamento social.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+    <!--<div id="lightpollution-map-widget" style="width:800px;height:600px;"></div>-->
+
+    <!--SIMULADOR-->
+    <section id="chamada-simulador" class="reveal">
+  <div class="simulador-container">
+    
+    <div class="section-title-wrap" style="text-align: center;">
+      <h2 class="section-title font-display" style="font-size: 30pt;">
+        <span class="section-title-line"></span>
+        LABORATÓRIO INTERATIVO
+      </h2>
+      <p class="section-subtitle section-subtitle-1 " style="margin-bottom: 25px;">
+        Experimente o impacto da iluminação urbana em tempo real
+      </p>
+    </div>
+
+    <div class="simulador-conteudo">
+      <p class="simulador-texto">
+        Como as luzes da cidade afetam a nossa visão das estrelas? Desenvolvemos um <strong>simulador digital exclusivo</strong> onde você assume o controle da iluminação urbana. Adicione postes, ligue refletores e veja o fenômeno do <em>Skyglow</em> acontecer diante dos seus olhos, apagando o brilho do céu noturno.
+      </p>
+      
+      <a href="#" target="_blank" class="btn-acessar-simulador">
+        Abrir Simulador Interativo
+      </a>
+    </div>
+  </div>
+</section>
+
+    <!-- ESTATÍSTICAS -->
+<section id="respostas" class="reveal">
+  <div class="respostas-container">
+
+    <!-- Header da Seção -->
+    <div class="section-title-wrap">
+          <h2 class="section-title font-display">
+            <span class="section-title-line"></span>
+            RESPOSTAS DO FORMULÁRIO
+          </h2>
+          <p class="section-subtitle" style="margin-bottom: 10px;">
+            Métricas de engajamento regional
+          </p>
+    </div>
+    
+
+    <!-- Card do Contador de Participantes -->
+    <div class="contador-card">
+      <div class="contador-label">Total de Participantes Conscientes</div>
+      <div id="numeroTotal" class="contador-numero">…</div>
+    </div>
+
+    <!-- Container de Erro (Oculto por padrão) -->
+    <div id="erro-banco" class="erro-mensagem" style="display: none;"></div>
+
+    <!-- Grid de Gráficos (3 Colunas/Cards) -->
+    <div class="graficos-grid" id="graficos-layout">
+      
+      <!-- Gráfico 1: Conhecimento -->
+      <div class="grafico-card">
+        <h3 class="grafico-titulo">Conhecimento sobre Poluição Luminosa</h3>
+        <div class="canvas-wrapper">
+          <canvas id="graficoConhecimento"></canvas>
+          <div id="loading-pie" class="loading-placeholder">Sincronizando com o Google Sheets…</div>
+        </div>
+      </div>
+
+      <!-- Gráfico 2: Qualidade do Céu -->
+      <div class="grafico-card">
+        <h3 class="grafico-titulo">Visibilidade Atual do Céu Noturno</h3>
+        <div class="canvas-wrapper">
+          <canvas id="graficoCeu"></canvas>
+          <div id="loading-bar" class="loading-placeholder">Sincronizando com o Google Sheets…</div>
+        </div>
+      </div>
+
+      <!-- Gráfico 3: Apoio a Medidas (Novo) -->
+      <div class="grafico-card">
+        <h3 class="grafico-titulo">Apoio a Medidas de Redução de Luz</h3>
+        <div class="canvas-wrapper">
+          <canvas id="graficoApoio"></canvas>
+          <div id="loading-apoio" class="loading-placeholder">Sincronizando com o Google Sheets…</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO SOBRE NÓS E ARTIGO CIENTÍFICO -->
+<section id="sobre-nos" class="reveal">
+  <div class="sobre-container">
+    
+    <div class="sobre-projeto-grid">
+      <div class="sobre-texto-institucional">
+        <div class="section-title-wrap">
+          <h2 class="section-title font-display" style="font-size: 30pt;">
+            <span class="section-title-line"></span>
+            SOBRE O RESGATE DA NOITE
+          </h2>
+          <p class="section-subtitle" style="margin-bottom: 10px;">
+            Quem está por trás do projeto
+          </p>
+        </div>
+        
+        <p class="sobre-paragrafo">
+          Este projeto nasceu dentro da <strong>Etec Doutor Ruth Cardoso (São Vicente - SP)</strong>, como parte integrante dos requisitos de avaliação acadêmica da instituição. Movido pelo desejo de entender os impactos silenciosos da poluição luminosa, o trabalho investiga profundamente como o excesso de luz artificial afeta a biodiversidade, a estabilidade ecológica e a saúde humana.
+        </p>
+        <p class="sobre-paragrafo">
+          Através de uma abordagem metodológica que une conceitos de física óptica, biologia celular e tecnologia, nossa missão é conscientizar a comunidade regional e propor estratégias sustentáveis para que nossas cidades possam crescer em segurança sem apagar, de forma definitiva, o brilho do céu noturno.
+        </p>
+      </div>
+
+      <div class="sobre-artigo-card">
+        <div class="artigo-badge">Documento Oficial</div>
+        <h3>Artigo Científico</h3>
+        <p>
+          Acesse a pesquisa acadêmica completa sob o título original <strong>"POLUIÇÃO LUMINOSA: Impactos nos ecossistemas e na saúde humana"</strong>. Confira nossos dados estatísticos sobre consumo energético, referências regulamentares e a fundamentação teórica do projeto.
+        </p>
+        
+        <a href="SEU_LINK_DO_PDF_AQUI" target="_blank" class="btn-download-artigo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          Ler Artigo Completo (PDF)
+        </a>
+      </div>
+    </div>
+
+    <div class="sobre-equipe-titulo">
+      <h3>Os Pesquisadores</h3>
+    </div>
+
+    <div class="sobre-equipe-grid">
+      
+      <div class="perfil-card">
+        <div class="perfil-avatar-wrapper">
+          <img src="https://via.placeholder.com/300" alt="Foto do Pesquisador" class="perfil-foto">
+        </div>
+        <div class="perfil-info">
+          <h4 class="perfil-nome">Fulano de Tal</h4>
+          <span class="perfil-cargo">Estudante — Etec Ruth Cardoso</span>
+          <p class="perfil-descricao">
+            Dedicou-se à investigação dos impactos ecológicos e clínicos da poluição luminosa, analisando a desregulação do ciclo circadiano humano e os severos danos biológicos causados a plantas, populações de insetos e ecossistemas silvestres.
+          </p>
+        </div>
+      </div>
+
+      <div class="perfil-card">
+        <div class="perfil-avatar-wrapper">
+          <img src="https://via.placeholder.com/300" alt="Foto do Pesquisador" class="perfil-foto">
+        </div>
+        <div class="perfil-info">
+          <h4 class="perfil-nome">Fulano de Tal</h4>
+          <span class="perfil-cargo">Estudante — Etec Ruth Cardoso</span>
+          <p class="perfil-descricao">
+            Focou-se no estudo dos fundamentos físicos da propagação da luz (reflexão, refração e espalhamento atmosférico), no impacto da ineficiência energética urbana (emissões de CO₂) e no desenvolvimento da estrutura digital interativa do projeto.
+          </p>
+        </div>
+      </div>
+
+      <div class="perfil-card">
+        <div class="perfil-avatar-wrapper">
+          <img src="https://via.placeholder.com/300" alt="Foto do Pesquisador" class="perfil-foto">
+        </div>
+        <div class="perfil-info">
+          <h4 class="perfil-nome">Fulano de Tal</h4>
+          <span class="perfil-cargo">Estudante — Etec Ruth Cardoso</span>
+          <p class="perfil-descricao">
+            Focou-se no estudo dos fundamentos físicos da propagação da luz (reflexão, refração e espalhamento atmosférico), no impacto da ineficiência energética urbana (emissões de CO₂) e no desenvolvimento da estrutura digital interativa do projeto.
+          </p>
+        </div>
+      </div>
+
+      <div class="perfil-card">
+        <div class="perfil-avatar-wrapper">
+          <img src="https://via.placeholder.com/300" alt="Foto do Pesquisador" class="perfil-foto">
+        </div>
+        <div class="perfil-info">
+          <h4 class="perfil-nome">Fulano de Tal</h4>
+          <span class="perfil-cargo">Estudante — Etec Ruth Cardoso</span>
+          <p class="perfil-descricao">
+            Focou-se no estudo dos fundamentos físicos da propagação da luz (reflexão, refração e espalhamento atmosférico), no impacto da ineficiência energética urbana (emissões de CO₂) e no desenvolvimento da estrutura digital interativa do projeto.
+          </p>
+        </div>
+      </div>
+
+      <div class="perfil-card">
+        <div class="perfil-avatar-wrapper">
+          <img src="https://via.placeholder.com/300" alt="Foto do Pesquisador" class="perfil-foto">
+        </div>
+        <div class="perfil-info">
+          <h4 class="perfil-nome">Fulano de Tal</h4>
+          <span class="perfil-cargo">Estudante — Etec Ruth Cardoso</span>
+          <p class="perfil-descricao">
+            Focou-se no estudo dos fundamentos físicos da propagação da luz (reflexão, refração e espalhamento atmosférico), no impacto da ineficiência energética urbana (emissões de CO₂) e no desenvolvimento da estrutura digital interativa do projeto.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="cta-formulario" class="reveal">
+  <div class="cta-container">
+    
+    <div class="section-title-wrap" style="text-align: center;">
+      <h2 class="section-title font-display" style="font-size: 30pt;">
+        AJUDE O RESGATE DA NOITE
+      </h2>
+      <span class="section-title-line"></span>
+      <p class="section-subtitle" style="margin-bottom: 25px;">
+        Sua voz importa para mapear o brilho das nossas cidades
+      </p>
+    </div>
+
+    <div class="cta-conteudo">
+      <p class="cta-texto">
+        O projeto ganha força com dados reais. Leva menos de 2 minutos para responder ao nosso formulário e o seu relato vai direto para o dashboard de estatísticas do nosso site. Vamos juntos defender o nosso direito ao céu estrelado?
+      </p>
+      
+      <a href="#" target="_blank" class="btn-cta-forms">
+        Responder ao Formulário
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer id="rodape">
+  <div class="rodape-container">
+    
+    <div class="rodape-grid">
+      <div class="rodape-bloco-info">
+        <h3 class="rodape-logo-texto">RESGATE DA NOITE</h3>
+        <p class="rodape-escola">Etec Doutor Ruth Cardoso — São Vicente - SP</p>
+        <p class="copyright">&copy; 2026 Resgate da Noite. Trabalho de Conclusão de Curso.</p>
+      </div>
+
+      <div class="rodape-bloco-tecnologias">
+        <h4>Referências e Tecnologias</h4>
+        <p class="tecnologias-texto">
+          Este ecossistema digital foi arquitetado integrando metodologias de design e inteligência artificial. Nossos agradecimentos e referências às ferramentas utilizadas no desenvolvimento:
+        </p>
+        <div class="tags-tecnologias">
+          <span class="tag-tech">Canva</span>
+          <span class="tag-tech">Gemini</span>
+          <span class="tag-tech">Claude</span>
+          <span class="tag-tech">Lovable</span>
+          <span class="tag-tech">Chart.js</span>
+          <span class="tag-tech">Google Sheets API</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+  <script src="src/script/menu-hamb.js"></script>
+    <script src="src/script/solucoes.js"></script>
+    <script src="src/script/impactos.js"></script>
+    <script src="/src/script/causas.js"></script>
+    <script src="src/script/light-map.js"></script>
+    <script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
+    <script src="src/script/image-comparisons.js"></script>
+    <script src="src/script/nav-section.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="src/script/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="src/script/dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,436 @@
+/* ==========================================================================
+   ARQUIVO UNIFICADO DE RESPONSIVIDADE E ADAPTAÇÃO MOBILE (media-query.css)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. TELAS DE COMPUTADORES PEQUENOS E TABLETS (max-width: 1024px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  section {
+    padding: 60px 20px !important;
+  }
+
+  .causas-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .impactos-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .sobre-projeto-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .sobre-equipe-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. SMARTPHONES EM GERAL (max-width: 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* ==========================================
+     SISTEMA DE MENU HAMBÚRGUER (CORRIGIDO E AMPLIADO)
+     ========================================== */
+  /* ==========================================
+     SISTEMA DE MENU HAMBÚRGUER (SEM PONTINHOS OU ARTEFATOS)
+     ========================================== */
+  header {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 16px 24px !important;
+    position: sticky !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .header-brand {
+    display: flex !important;
+    align-items: center !important;
+    max-width: 75% !important;
+  }
+
+  .header-brand img {
+    height: 35px !important;
+    width: auto !important;
+  }
+
+  header h1 {
+    margin: 0 0 0 12px !important;
+    font-size: 1.25rem !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  /* Botão Hambúrguer Totalmente Blindado contra Bordas, Focos e Pontos */
+  .hamburger {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    width: 28px !important;
+    height: 20px !important;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important; /* Mata o contorno de foco do navegador */
+    box-shadow: none !important; /* Remove qualquer sombra fantasma */
+    -webkit-tap-highlight-color: transparent !important; /* Remove o flash azul ao tocar no celular */
+    cursor: pointer !important;
+    padding: 0 !important;
+    z-index: 1010 !important;
+    margin-left: auto !important;
+    flex-shrink: 0 !important;
+  }
+
+  .hamburger .bar {
+    height: 3px !important;
+    width: 100% !important;
+    background-color: #e4d4b9 !important;
+    border-radius: 10px !important;
+    transition: all 0.3s ease !important;
+  }
+
+  /* Animações precisas do X */
+  .hamburger.is-active .bar:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg) !important;
+  }
+
+  /* CORREÇÃO: Além de opacidade 0, encolhemos o elemento a zero para não deixar resíduos de pixel */
+  .hamburger.is-active .bar:nth-child(2) {
+    opacity: 0 !important;
+    transform: scale(0) !important;
+  }
+
+  .hamburger.is-active .bar:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg) !important;
+  }
+
+  /* Painel de Navegação de Links (Garante remoção de bolinhas de listas se houver) */
+  nav,
+  nav ul,
+  nav li {
+    list-style: none !important;
+    list-style-type: none !important;
+  }
+
+  nav {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    width: 100% !important;
+    background-color: #10121f !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    max-height: 0 !important;
+    transition: max-height 0.35s ease-in-out !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    z-index: 1000 !important;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6) !important;
+  }
+
+  nav.is-active {
+    max-height: 520px !important;
+  }
+
+  /* Links Maiores, Confortáveis e sem decorações residuais */
+  nav a {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    padding: 18px 0 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.03em !important;
+    color: #e4d4b9 !important;
+    text-decoration: none !important;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03) !important;
+    box-sizing: border-box !important;
+  }
+
+  nav a.button {
+    margin: 16px auto !important;
+    width: 75% !important;
+    padding: 14px 0 !important;
+    font-size: 15px !important;
+    border-radius: 25px !important;
+    border-bottom: none !important;
+    color: #000000 !important;
+  }
+
+  /* ==========================================
+     CORREÇÃO UNIVERSAL DE TÍTULOS (ALINHAMENTO ABSOLUTO)
+     ========================================== */
+  .section-title-wrap {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-bottom: 25px !important;
+  }
+
+  .section-title {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    gap: 8px !important;
+    font-size: 1.8rem !important;
+  }
+
+  .section-title-line,
+  .section-title-wrap .section-title-line,
+  .texto-definicao .section-title-line {
+    margin: 0 auto !important;
+    display: block !important;
+    float: none !important;
+  }
+
+  .section-subtitle {
+    margin: 8px 0 0 0 !important;
+    text-align: center !important;
+    width: 100% !important;
+    font-size: 12px !important;
+  }
+
+  /* ==========================================
+     SEÇÃO INÍCIO (HERO SECTION CENTRALIZADO)
+     ========================================== */
+  #inicio {
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 80px 24px 40px 24px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .video-container {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1 !important;
+  }
+
+  .video-bg {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  #inicio::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(
+      to bottom,
+      rgba(16, 18, 31, 0.5) 0%,
+      rgba(16, 18, 31, 0.8) 60%,
+      rgba(16, 18, 31, 0.95) 100%
+    ) !important;
+    z-index: 2 !important;
+  }
+
+  #inicio .title,
+  #inicio .desc,
+  #inicio > a {
+    position: relative !important;
+    z-index: 3 !important;
+    max-width: 550px !important;
+    width: 100% !important;
+  }
+
+  #inicio h1 {
+    font-size: 2.2rem !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    margin-bottom: 15px !important;
+    color: #ffffff !important;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7) !important;
+  }
+
+  #inicio .desc p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    color: #e4d4b9 !important;
+    margin-bottom: 30px !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6) !important;
+  }
+
+  #inicio > a {
+    display: inline-block !important;
+    width: auto !important;
+    min-width: 220px !important;
+    padding: 14px 28px !important;
+  }
+
+  /* ==========================================
+     SEÇÃO DEFINIÇÃO
+     ========================================== */
+  #definicao {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 50px 20px !important;
+  }
+
+  .img-definicao {
+    width: 100% !important;
+    height: 250px !important;
+    border-radius: 20px !important;
+    background-image: url("../imgs/definicao-img.png") !important;
+    margin-bottom: 25px !important;
+  }
+
+  .texto-definicao {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 auto 20px auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .texto-definicao h2 {
+    font-size: 2rem !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin-bottom: 8px !important;
+  }
+
+  .circle-definicao,
+  .circle-definicao-2 {
+    display: none !important;
+  }
+
+  .circle-text {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    font-size: 15px !important;
+    text-align: center !important;
+    padding: 0 !important;
+    margin-bottom: 30px !important;
+    line-height: 1.6 !important;
+  }
+
+  /* ==========================================
+     OUTROS COMPONENTES DO SITE
+     ========================================== */
+  .causas-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .causa-painel-inner {
+    flex-direction: column !important;
+    padding: 20px !important;
+  }
+
+  .impactos-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .impacto-card {
+    padding: 25px 20px !important;
+  }
+
+  .simulador-texto {
+    font-size: 14px !important;
+    text-align: center !important;
+  }
+
+  .btn-acessar-simulador,
+  .btn-cta-forms {
+    display: inline-block !important;
+    width: 100% !important;
+    max-width: 280px !important;
+    text-align: center !important;
+    margin: 15px auto 0 auto !important;
+  }
+
+  .graficos-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .sobre-equipe-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .perfil-card {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 20px !important;
+  }
+
+  .perfil-avatar-wrapper {
+    margin: 0 auto 15px auto !important;
+  }
+
+  .rodape-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+    gap: 30px !important;
+  }
+
+  .tags-tecnologias {
+    justify-content: center !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. SMARTPHONES COM TELAS PEQUENAS (max-width: 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  header {
+    padding: 14px 16px !important; /* Espaço ligeiramente menor em celulares muito pequenos */
+  }
+
+  header h1 {
+    font-size: 1.15rem !important;
+  }
+
+  nav a {
+    font-size: 15px !important;
+    padding: 16px 0 !important;
+  }
+
+  #inicio h1 {
+    font-size: 1.9rem !important;
+  }
+
+  .causas-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
