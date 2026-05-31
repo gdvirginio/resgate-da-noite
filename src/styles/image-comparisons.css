@@ -36,6 +36,7 @@
     0 30px 80px rgba(0, 0, 0, 0.4);
 }
 
+
 /* Camada das imagens */
 .wrapper .images {
   position: relative;
@@ -43,14 +44,27 @@
   height: 100%;
 }
 
+/* Garanta que o clip-path não tenha transição lenta */
+.img-2 {
+  z-index: 2;
+  /* Isso é essencial para que o movimento seja instantâneo */
+  transition: none; 
+}
+
 /* Imagens */
 .images .img-1,
 .images .img-2 {
   position: absolute;
-  inset: 0;
-
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.images .img-2 {
+  clip-path: inset(0 50% 0 0); 
 }
 
 /* Depois */
@@ -206,6 +220,8 @@
     0 4px 15px rgba(0, 0, 0, 0.25);
 
   z-index: 3;
+
+  transition: opacity 0.3s ease; 
 }
 
 /* Mantém centralizado */
@@ -215,6 +231,26 @@
 
 .img-1 .label {
   right: 18px;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+}
+
+.slider input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* O input deve ficar invisível, mas cobrindo tudo */
+  cursor: ew-resize;
+  z-index: 2;
+}
+
+.slider .drag-line {
+  pointer-events: none; /* O mouse passa direto pela linha e clica no input */
+  z-index: 1;
 }
 
 /* Responsivo */
