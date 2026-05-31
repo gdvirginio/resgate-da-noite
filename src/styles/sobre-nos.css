@@ -218,3 +218,39 @@
     padding: 32px 20px;
   }
 }
+
+
+
+/* AJUSTE TEMPORÁRIO: Centraliza o texto institucional quando o card do artigo estiver ausente */
+.sobre-projeto-grid {
+  /* Se você comentar o card, a grid fica com 1 item apenas */
+  grid-template-columns: 1fr; 
+  justify-items: center;
+}
+
+.sobre-texto-institucional {
+  max-width: 800px; /* Evita que o texto fique largo demais em telas grandes */
+  text-align: center;
+}
+
+/* Garante que a barra de destaque (glow-bar) centralize com o resto */
+.sobre-glow-bar {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Opcional: reajusta a responsividade para não quebrar quando você descomentar */
+@media (min-width: 901px) {
+  .sobre-projeto-grid.tem-artigo {
+    grid-template-columns: 1.4fr 1fr; /* Quando voltar o card, você pode adicionar essa classe no HTML */
+    justify-items: start;
+  }
+}
+
+/* Centraliza o título e o subtitle */
+.section-title-wrap {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Isso centraliza a linha (glow-bar) abaixo do texto */
+}
