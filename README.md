@@ -1,8 +1,3 @@
-Aqui tens um modelo completo de **`README.md`** altamente profissional para o teu repositório do GitHub. Ele foi estruturado usando boas práticas de documentação de código (Markdown), com uma hierarquia limpa, ícones (*emojis*) e seções bem organizadas para destacar o valor do teu projeto logo no primeiro olhar.
-
-Basta criares um ficheiro chamado `README.md` na raiz do teu repositório e colar o seguinte conteúdo:
-
-```markdown
 # 🌌 Resgate da Noite
 
 > **Plataforma web interativa e responsiva dedicada à conscientização, análise e mitigação dos impactos da poluição luminosa nos ecossistemas e na saúde humana.**
@@ -107,7 +102,7 @@ O desenvolvimento deste software seguiu os rigorosos padrões acadêmicos da Ass
 
 ## 👤 Autores
 
-* **Teu Nome** - *Desenvolvimento Frontend, UI/UX Design e Pesquisa* - [Teu GitHub](https://www.google.com/search?q=https://github.com/teu-usuario)
+* **Gianluca Diogo Virginio** - *Desenvolvimento Frontend, UI/UX Design e Pesquisa* - [gdvirginio]([https://www.google.com/search?q=https://github.com/teu-usuario](https://github.com/gdvirginio))
 
 ---
 
