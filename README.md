@@ -89,17 +89,6 @@ O link de visualização publica é **[Resgate da Noite](https://resgate-da-noit
 
 ---
 
-## 📄 Metodologia Científica (ABNT)
-
-O desenvolvimento deste software seguiu os rigorosos padrões acadêmicos da Associação Brasileira de Normas Técnicas (ABNT), estruturado sobre o ciclo de vida de sistemas web:
-
-1. **Curadoria de Requisitos** ( Rosenfeld et al., 2015 )
-2. **Design de Experiência do Utilizador (UX/UI)** ( Diretrizes W3C/WCAG, 2018 )
-3. **Implementação de Engenharia de Software** ( Pressman & Maxim, 2014; Flanagan, 2011 )
-4. **Homologação Adaptativa** ( Frain, 2020 )
-
----
-
 ## 👤 Autores
 
 * **Gianluca Diogo Virginio** - *Desenvolvimento Frontend, UI/UX Design e Pesquisa* - [gdvirginio]([https://www.google.com/search?q=https://github.com/teu-usuario](https://github.com/gdvirginio))
