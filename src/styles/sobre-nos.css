@@ -1,8 +1,9 @@
 /* ==========================================================================
-   SEÇÃO SOBRE NÓS
+   SEÇÃO SOBRE NÓS (#sobre-nos)
    ========================================================================== */
+
 #sobre-nos {
-  padding: 6rem 1.5rem;
+  padding: 60px 24px;
   position: relative;
   z-index: 5;
   border-top: 1px solid rgba(255, 255, 255, 0.03);
@@ -13,195 +14,106 @@
   margin: 0 auto;
 }
 
-/* Grid Superior: Texto vs Card do Artigo */
+/* Grid: Texto Institucional vs Card de Metodologia */
 .sobre-projeto-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  grid-template-columns: 1.1fr 1fr;
   gap: 48px;
   align-items: center;
-  margin-bottom: 5rem;
 }
 
-.sobre-texto-institucional .sobre-subtitle {
-  text-transform: uppercase;
-  font-size: 13px;
-  letter-spacing: 0.15em;
-  color: #6a6a8a;
+#sobre-nos .section-title-wrap {
+  margin-bottom: 20px;
 }
 
-.sobre-texto-institucional .sobre-title {
-  margin-top: 12px;
-  margin-bottom: 0;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: clamp(2.1rem, 4vw, 2.6rem);
-  letter-spacing: -0.01em;
-}
-
-.sobre-glow-bar {
-  margin-top: 16px;
-  margin-bottom: 24px;
-  width: 60px;
-  height: 3px;
-  background: #e8c97a;
-  box-shadow: 0 0 14px rgba(232, 201, 122, 0.6);
-  border-radius: 2px;
+.sobre-texto-institucional {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .sobre-paragrafo {
   color: #ddd5c0;
-  font-size: 15px;
-  line-height: 1.7;
-  margin-bottom: 16px;
+  font-size: 15.5px;
+  line-height: 1.75;
+  margin: 0;
 }
 
 .sobre-paragrafo strong {
   color: #e8c97a;
-  font-weight: 500;
+  font-weight: 600;
 }
 
-/* Card Lateral do Artigo */
-.sobre-artigo-card {
-  background-color: rgba(255, 255, 255, 0.01);
-  border: 1px solid rgba(232, 201, 122, 0.15);
-  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
-  border-radius: 16px;
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-.artigo-badge {
-  position: absolute;
-  top: -12px;
-  left: 32px;
-  background: #e8c97a;
-  color: #080a18;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  padding: 4px 12px;
+/* Card de Metodologia e Frentes de Investigação */
+.sobre-metodologia-card {
+  background:
+    radial-gradient(circle at top right, rgba(232, 201, 122, 0.08), transparent 60%),
+    rgba(23, 27, 55, 0.55);
+  border: 1px solid rgba(232, 201, 122, 0.2);
   border-radius: 20px;
-  letter-spacing: 0.05em;
+  padding: 28px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
 }
 
-.sobre-artigo-card h3 {
+.metodologia-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+}
+
+.metodologia-titulo {
   color: #ffffff;
-  font-size: 1.6rem;
-  margin: 8px 0 12px 0;
-}
-
-.sobre-artigo-card p {
-  color: #9090b0;
-  font-size: 14px;
-  line-height: 1.6;
-  margin-bottom: 24px;
-}
-
-.btn-download-artigo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background-color: transparent;
-  border: 1px solid #e8c97a;
-  color: #e8c97a;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 14px;
-  padding: 12px 20px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.btn-download-artigo:hover {
-  background-color: #e8c97a;
-  color: #080a18;
-  box-shadow: 0 0 15px rgba(232, 201, 122, 0.3);
-  transform: translateY(-1px);
-}
-
-/* Parte Inferior: Integrantes */
-.sobre-equipe-titulo {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  padding-top: 3rem;
-  margin-bottom: 2.5rem;
-}
-
-.sobre-equipe-titulo h3 {
-  color: #ffffff;
-  font-size: 1.6rem;
-  margin: 0;
-  letter-spacing: 0.02em;
-}
-
-.sobre-equipe-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-  gap: 32px;
-}
-
-.perfil-card {
-  background-color: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  border-radius: 16px;
-  padding: 24px;
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  transition: transform 0.3s ease;
-}
-
-.perfil-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(255, 255, 255, 0.08);
-}
-
-.perfil-avatar-wrapper {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  overflow: hidden;
-  flex-shrink: 0;
-  border: 2px solid rgba(232, 201, 122, 0.3);
-}
-
-.perfil-foto {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.perfil-info {
-  flex: 1;
-}
-
-.perfil-nome {
-  color: #ffffff;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   margin: 0 0 4px 0;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.01em;
 }
 
-.perfil-cargo {
-  color: #e8c97a;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  display: block;
-  margin-bottom: 12px;
-}
-
-.perfil-descricao {
+.metodologia-sub {
   color: #9090b0;
   font-size: 13px;
-  line-height: 1.5;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.metodologia-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.metodologia-item {
+  padding-left: 14px;
+  border-left: 2px solid rgba(232, 201, 122, 0.4);
+  transition: border-color 0.3s ease;
+}
+
+.metodologia-item:hover {
+  border-left-color: #e8c97a;
+}
+
+.metodologia-item strong {
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.metodologia-item p {
+  color: #c8c2b0;
+  font-size: 13px;
+  line-height: 1.55;
   margin: 0;
 }
 
-/* Responsividade para Telas Menores */
-@media (max-width: 900px) {
+/* Responsividade */
+@media (max-width: 980px) {
+  #sobre-nos {
+    padding: 50px 20px;
+  }
+
   .sobre-projeto-grid {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -209,48 +121,11 @@
 }
 
 @media (max-width: 600px) {
-  .sobre-equipe-grid {
-    grid-template-columns: 1fr;
+  #sobre-nos {
+    padding: 40px 16px;
   }
-  .perfil-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 32px 20px;
+
+  .sobre-metodologia-card {
+    padding: 20px 18px;
   }
-}
-
-
-
-/* AJUSTE TEMPORÁRIO: Centraliza o texto institucional quando o card do artigo estiver ausente */
-.sobre-projeto-grid {
-  /* Se você comentar o card, a grid fica com 1 item apenas */
-  grid-template-columns: 1fr; 
-  justify-items: center;
-}
-
-.sobre-texto-institucional {
-  max-width: 800px; /* Evita que o texto fique largo demais em telas grandes */
-  text-align: center;
-}
-
-/* Garante que a barra de destaque (glow-bar) centralize com o resto */
-.sobre-glow-bar {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Opcional: reajusta a responsividade para não quebrar quando você descomentar */
-@media (min-width: 901px) {
-  .sobre-projeto-grid.tem-artigo {
-    grid-template-columns: 1.4fr 1fr; /* Quando voltar o card, você pode adicionar essa classe no HTML */
-    justify-items: start;
-  }
-}
-
-/* Centraliza o título e o subtitle */
-.section-title-wrap {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Isso centraliza a linha (glow-bar) abaixo do texto */
 }

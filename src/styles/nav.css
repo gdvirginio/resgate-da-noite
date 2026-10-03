@@ -4,24 +4,36 @@ header {
   top: 0;
   z-index: 1000;
   display: flex;
-  flex-wrap: wrap; /* Permite quebrar linha no mobile */
-  justify-content: space-between; /* Afasta a logo do menu */
+  justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 24px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.header-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.25s ease;
+}
+
+.header-brand:hover {
+  opacity: 0.9;
+}
+
 header img {
-  width: 50px;
-  height: 50px;
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
 }
 
 header h1 {
   color: white;
   text-shadow: 0 -3px #ffe8bb7b;
-  font-size: clamp(1.2rem, 3vw, 1.8rem); /* Texto responsivo */
-  margin-left: 15px;
-  margin-right: auto; /* Empurra o menu para a direita */
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  margin: 0;
 }
 
 nav {
@@ -31,17 +43,6 @@ nav {
   justify-content: center;
   align-items: center;
   padding: 10px 0;
-}
-
-@media (max-width: 900px) {
-  header {
-    justify-content: center;
-    flex-direction: column; /* Empilha logo e menu no celular */
-    text-align: center;
-  }
-  header h1 {
-    margin: 10px 0;
-  }
 }
 nav a {
   text-decoration: none;

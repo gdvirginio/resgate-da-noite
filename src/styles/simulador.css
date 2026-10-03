@@ -1,8 +1,8 @@
 /* ==========================================================================
-   SEÇÃO DE CHAMADA PARA O SIMULADOR
+   SEÇÃO DE CHAMADA PARA O SIMULADOR (LABORATÓRIO INTERATIVO)
    ========================================================================== */
 #chamada-simulador {
-  padding: 6rem 1.5rem;
+  padding: 60px 24px;
   border-top: 1px solid rgba(255, 255, 255, 0.03);
   position: relative;
   z-index: 5;
@@ -13,45 +13,203 @@
   margin: 0 auto;
 }
 
+/* Card Showcase Dinâmico em 2 Colunas */
+.simulador-card-wrapper {
+  background:
+    radial-gradient(ellipse at 85% 20%, rgba(91, 124, 250, 0.12), transparent 55%),
+    radial-gradient(circle at 15% 85%, rgba(232, 201, 122, 0.06), transparent 50%),
+    rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(232, 201, 122, 0.18);
+  border-radius: 28px;
+  padding: 52px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: center;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+}
+
+.simulador-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.simulador-info .section-title-wrap {
+  margin-bottom: 20px;
+}
+
 .simulador-texto {
   color: #ddd5c0;
-  font-size: 15px;
-  line-height: 1.7;
-  margin-bottom: 40px;
-  text-align: center;
+  font-size: 15.5px;
+  line-height: 1.75;
+  margin: 0 0 24px 0;
+  text-align: left;
 }
 
 .simulador-texto strong {
   color: #e8c97a;
 }
 
-/* BOTÃO COPIANDO O DESIGN SYSTEM DO INÍCIO */
+.simulador-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.simulador-features li {
+  color: #c8c2b0;
+  font-size: 14px;
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.simulador-features li::before {
+  content: "•";
+  color: #e8c97a;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.simulador-action {
+  display: flex;
+  align-items: center;
+}
+
+/* BOTÃO AUTÊNTICO DO DESIGN SYSTEM ORIGINAL */
 .btn-acessar-simulador {
   display: inline-block;
-  margin: 0 auto;
   color: #e4d4b9;
   background-color: #4047764c;
   border: 5px solid rgba(0, 0, 0, 0.4);
   border-radius: 30px;
-  padding: 13px 30px;
+  padding: 13px 32px;
   text-decoration: none;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   font-size: 15pt;
 }
 
 .btn-acessar-simulador:hover {
   cursor: pointer;
   transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
-.simulador-conteudo {
+/* Card Visual Interativo de Preview */
+.simulador-preview {
+  display: flex;
+  justify-content: center;
+}
+
+.preview-frame {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  height: 320px;
+  background-color: #070914;
+  background-image:
+    radial-gradient(circle at 50% 30%, rgba(232, 201, 122, 0.15), transparent 60%),
+    radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(1.5px 1.5px at 140px 70px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 280px 40px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 90px 180px, #e4d4b9, rgba(0, 0, 0, 0)),
+    radial-gradient(1px 1px at 350px 160px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(1.5px 1.5px at 220px 220px, #ffffff, rgba(0, 0, 0, 0));
+  border: 1px solid rgba(232, 201, 122, 0.25);
+  border-radius: 20px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  padding: 22px;
+  text-decoration: none;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
-p.section-subtitle-1 {
-  display: flex;
-  align-items: flex-start;
+.preview-frame:hover {
+  transform: translateY(-6px);
+  border-color: #e8c97a;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
+}
 
+.preview-title {
+  font-size: 13px;
+  color: #ddd5c0;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  z-index: 2;
+}
+
+.preview-illustration {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.preview-lanterna {
+  width: 90px;
+  height: auto;
+  transform: rotate(-15deg);
+  filter: drop-shadow(0 0 15px rgba(232, 201, 122, 0.4));
+  z-index: 2;
+  transition: transform 0.4s ease;
+}
+
+.preview-frame:hover .preview-lanterna {
+  transform: rotate(-5deg) scale(1.08);
+}
+
+.preview-beam {
+  position: absolute;
+  top: 30%;
+  right: 15%;
+  width: 220px;
+  height: 140px;
+  background: radial-gradient(ellipse at left, rgba(232, 201, 122, 0.35), transparent 70%);
+  transform: rotate(-10deg);
+  pointer-events: none;
+  filter: blur(10px);
+}
+
+.preview-cta {
+  font-size: 13px;
+  color: #e8c97a;
+  font-weight: 600;
+  background: rgba(8, 10, 24, 0.85);
+  border: 1px solid rgba(232, 201, 122, 0.25);
+  border-radius: 12px;
+  padding: 8px 14px;
+  text-align: center;
+  z-index: 2;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.preview-frame:hover .preview-cta {
+  background: #e8c97a;
+  color: #080a18;
+}
+
+/* Responsividade do Simulador */
+@media (max-width: 980px) {
+  .simulador-card-wrapper {
+    grid-template-columns: 1fr;
+    padding: 36px 24px;
+    gap: 36px;
+  }
+
+  .preview-frame {
+    max-width: 100%;
+    height: 260px;
+  }
 }

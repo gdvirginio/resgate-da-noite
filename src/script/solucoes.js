@@ -29,14 +29,17 @@ function handleAccordionClick(event) {
   const accordionContainer = clickedHeader.closest(".accordion-container");
   const allItems = accordionContainer.querySelectorAll(".accordion-item");
 
-  // Remove a classe de todos os itens
+  // Remove a classe de todos os itens e atualiza aria-expanded
   allItems.forEach((item) => {
     item.classList.remove("is-open");
+    const btn = item.querySelector(".accordion-header");
+    if (btn) btn.setAttribute("aria-expanded", "false");
   });
 
-  // Se não estava aberto, abre o atual
+  // Se não estava aberto, abre o atual e atualiza aria-expanded
   if (!isOpen) {
     currentItem.classList.add("is-open");
+    clickedHeader.setAttribute("aria-expanded", "true");
   }
 }
 

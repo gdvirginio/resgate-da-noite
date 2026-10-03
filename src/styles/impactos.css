@@ -3,7 +3,7 @@
    ============================================= */
 
 #impactos {
-  padding: 100px 24px;
+  padding: 60px 24px;
   position: relative;
   z-index: 1;
 }
@@ -16,60 +16,81 @@
 /* Grid */
 .impactos-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  margin-top: 56px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 24px;
 }
 
-@media (max-width: 900px) {
-  .impactos-grid { grid-template-columns: 1fr; }
+@media (max-width: 1100px) {
+  .impactos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .impactos-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Card */
 .impacto-card {
   background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 3px solid rgba(232, 201, 122, 0.5);
   border-radius: 20px;
-  padding: 40px 32px;
-  text-align: center;
+  padding: 36px 28px;
+  text-align: left;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  transition: transform 0.4s ease, border-color 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
 .impacto-card:hover {
-  transform: scale(1.03);
-  border-color: rgba(232, 201, 122, 0.25);
+  transform: translateY(-8px);
+  border-color: rgba(232, 201, 122, 0.35);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.55);
 }
 
 /* Ícone */
 .impacto-icone {
-  margin-bottom: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  background: rgba(232, 201, 122, 0.08);
+  border: 1px solid rgba(232, 201, 122, 0.2);
+  margin-bottom: 20px;
 }
 
 /* Número grande */
 .impacto-numero {
-  font-size: 4.5rem;
+  font-size: clamp(3.2rem, 5vw, 4.4rem);
   color: #e8c97a;
   font-weight: 700;
   line-height: 1;
-  margin: 16px 0 12px;
+  margin: 0 0 10px;
   letter-spacing: -0.02em;
+  text-shadow: 0 0 24px rgba(232, 201, 122, 0.25);
 }
 
 /* Label */
 .impacto-label {
-  font-size: 14px;
-  color: #ddd5c0;
-  font-weight: 500;
-  margin-bottom: 18px;
-  line-height: 1.5;
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 12px;
+  line-height: 1.4;
 }
 
 /* Texto descritivo */
 .impacto-texto {
-  font-size: 14px;
+  font-size: 13.5px;
   color: #9090b0;
-  line-height: 1.7;
+  line-height: 1.65;
   margin: 0;
 }

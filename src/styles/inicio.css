@@ -60,28 +60,27 @@
   font-size: 15pt;
 }
 .desc {
-  padding: 20px;
+  padding: 20px 24px;
   display: block;
   width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
   background: radial-gradient(
-    ellipse 20% 100% at center,
-    #10121f,
-    rgba(16, 18, 31, 0.149)
+    ellipse 75% 100% at center,
+    rgba(16, 18, 31, 0.9) 0%,
+    rgba(16, 18, 31, 0.6) 60%,
+    transparent 100%
   );
 }
 #inicio a {
   color: #e4d4b9;
   background-color: #4047764c;
-  border: 5px solid rgba(0, 0, 0, 0.4); /* 10px era exagerado */
+  border: 5px solid rgba(0, 0, 0, 0.4);
   border-radius: 30px;
   padding: 13px 30px;
   text-decoration: none;
   transition: transform 0.3s ease;
   font-size: 15pt;
-}
-#inicio a {
-  color: #e4d4b9;
-  text-decoration: none;
 }
 
 #inicio a:hover {

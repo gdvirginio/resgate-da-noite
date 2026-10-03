@@ -3,12 +3,56 @@
   padding: 0;
   margin: 0;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
   background-color: #10121f;
+  color: #d1d5db;
+  overflow-x: hidden;
 }
+
 h1, h2 {
   text-shadow: 0 -5px #ffe8bb7b;
+}
+
+/* Acessibilidade: anel de foco de alto contraste para navegação por teclado */
+:focus-visible {
+  outline: 2px solid #e8c97a;
+  outline-offset: 3px;
+}
+
+/* Link acessível para pular direto ao conteúdo principal (Leitores de tela e teclado) */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  background-color: #e8c97a;
+  color: #10121f;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  z-index: 99999;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: top 0.2s ease-in-out;
+}
+
+.skip-link:focus {
+  top: 15px;
+}
+
+/* Respeito à preferência do usuário por redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

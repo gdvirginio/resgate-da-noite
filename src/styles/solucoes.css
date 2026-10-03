@@ -3,15 +3,9 @@
    ========================================================================== */
 #solucoes {
   position: relative;
-  z-index: 10; /* Aumentado para garantir que fique acima de overlays e vídeos de fundo */
-  padding: 6rem 1.5rem; /* 96px */
-  pointer-events: auto; /* Garante que a seção aceite interações do mouse */
-}
-
-@media (min-width: 768px) {
-  #solucoes {
-    padding: 7rem 1.5rem; /* 112px */
-  }
+  z-index: 10;
+  padding: 60px 24px;
+  pointer-events: auto;
 }
 
 .container {
@@ -90,14 +84,20 @@
 
 /* Estado Ativo / Aberto */
 .accordion-item.is-open {
-  background-color: rgba(255, 255, 255, 0.02);
+  background-color: rgba(255, 255, 255, 0.035);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 40px -20px rgba(0, 0, 0, 0.6);
-  border-radius: 8px;
-  margin-top: 12px;
-  margin-bottom: 12px;
+  border-color: rgba(232, 201, 122, 0.25);
+  border-left: 4px solid #e8c97a;
+  box-shadow: 0 14px 40px -15px rgba(0, 0, 0, 0.65);
+  border-radius: 10px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.accordion-item:not(.is-open):hover {
+  background-color: rgba(255, 255, 255, 0.015);
+  border-left: 4px solid rgba(232, 201, 122, 0.25);
 }
 
 /* ==========================================================================

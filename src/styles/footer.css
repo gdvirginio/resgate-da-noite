@@ -2,7 +2,7 @@
    SEÇÃO CTA (CHAMADA PARA O FORMULÁRIO)
    ========================================================================== */
 #cta-formulario {
-  padding: 5rem 1.5rem;
+  padding: 60px 24px;
   border-top: 1px solid rgba(255, 255, 255, 0.03);
   position: relative;
   z-index: 5;
@@ -11,24 +11,51 @@
 .cta-container {
   max-width: 1240px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
-.cta-conteudo {
-  display: flex;
-  flex-direction: column;
+
+.cta-card {
+  width: 100%;
+  box-sizing: border-box;
+  background:
+    radial-gradient(circle at 85% 30%, rgba(64, 71, 118, 0.35), transparent 60%),
+    radial-gradient(circle at 15% 75%, rgba(232, 201, 122, 0.06), transparent 50%),
+    rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(232, 201, 122, 0.2);
+  border-radius: 28px;
+  padding: 52px;
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 48px;
   align-items: center;
-  justify-content: center;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+}
+
+.cta-title {
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  text-shadow: 0 -4px #ffe8bb7b;
+  margin: 0 0 16px 0;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .cta-texto {
-  color: #9090b0;
-  font-size: 15px;
-  line-height: 1.6;
-  margin-bottom: 40px;
+  color: #ddd5c0;
+  font-size: 15.5px;
+  line-height: 1.75;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.cta-action-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
   text-align: center;
 }
 
@@ -39,15 +66,207 @@
   background-color: #4047764c;
   border: 5px solid rgba(0, 0, 0, 0.4);
   border-radius: 30px;
-  padding: 13px 30px;
+  padding: 13px 32px;
   text-decoration: none;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   font-size: 15pt;
+  white-space: nowrap;
 }
 
 .btn-cta-forms:hover {
   cursor: pointer;
   transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.cta-nota {
+  font-size: 12.5px;
+  color: #6a6a8a;
+}
+
+@media (max-width: 900px) {
+  .cta-card {
+    grid-template-columns: 1fr;
+    padding: 36px 24px;
+    gap: 32px;
+  }
+}
+
+/* ==========================================================================
+   SEÇÃO DE REFERÊNCIAS BIBLIOGRÁFICAS (DROPDOWN ACIMA DO FOOTER)
+   ========================================================================== */
+#referencias-pesquisa {
+  padding: 10px 24px 40px 24px;
+  position: relative;
+  z-index: 5;
+}
+
+.referencias-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.referencias-toggle-btn {
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(16, 18, 35, 0.7);
+  border: 1px solid rgba(232, 201, 122, 0.25);
+  border-radius: 20px;
+  padding: 18px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  cursor: pointer;
+  text-align: left;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.referencias-toggle-btn:hover {
+  border-color: rgba(232, 201, 122, 0.55);
+  background: rgba(24, 27, 50, 0.85);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45);
+}
+
+.referencias-btn-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.referencias-btn-titulo {
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.referencias-btn-sub {
+  color: #8c8ca5;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.referencias-btn-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(232, 201, 122, 0.1);
+  border: 1px solid rgba(232, 201, 122, 0.3);
+  border-radius: 999px;
+  padding: 8px 16px;
+  color: #e8c97a;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.referencias-btn-badge svg {
+  transition: transform 0.3s ease;
+}
+
+.referencias-toggle-btn.aberto .referencias-btn-badge {
+  background: rgba(232, 201, 122, 0.22);
+  border-color: #e8c97a;
+}
+
+.referencias-toggle-btn.aberto .referencias-btn-badge svg {
+  transform: rotate(180deg);
+}
+
+.referencias-drop-conteudo {
+  margin-top: 16px;
+  background: rgba(10, 12, 24, 0.65);
+  border: 1px solid rgba(232, 201, 122, 0.15);
+  border-radius: 20px;
+  padding: 28px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  animation: fadeInReferencias 0.35s ease;
+}
+
+@keyframes fadeInReferencias {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.referencias-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 24px;
+}
+
+.referencia-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 3px solid rgba(232, 201, 122, 0.4);
+  border-radius: 8px;
+  padding: 12px 16px;
+  transition: border-left-color 0.25s ease, background 0.25s ease;
+}
+
+.referencia-item:hover {
+  border-left-color: #e8c97a;
+  background: rgba(232, 201, 122, 0.03);
+}
+
+.referencia-item p {
+  color: #c8c2b0;
+  font-size: 12.5px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.referencia-item strong {
+  color: #ffe8bb;
+}
+
+.referencia-item em {
+  color: #e4d4b9;
+  font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .referencias-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  #referencias-pesquisa {
+    padding: 10px 16px 32px 16px;
+  }
+
+  .referencias-toggle-btn {
+    padding: 16px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .referencias-btn-badge {
+    align-self: flex-start;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .referencias-drop-conteudo {
+    padding: 20px 16px;
+  }
 }
 
 /* ==========================================================================
@@ -55,7 +274,7 @@
    ========================================================================== */
 #rodape {
   background-color: #04050d;
-  padding: 4rem 1.5rem 3rem 1.5rem;
+  padding: 3rem 1.5rem 2rem 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.04);
 }
 
@@ -83,7 +302,14 @@
   color: #e8c97a;
   font-size: 13px;
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 6px;
+}
+
+.rodape-bloco-info .rodape-sub {
+  color: #8c8ca5;
+  font-size: 12.5px;
+  margin-top: 0;
+  margin-bottom: 14px;
 }
 
 .rodape-bloco-info .copyright {
@@ -91,6 +317,33 @@
   font-size: 12px;
   line-height: 1.5;
   margin: 0;
+}
+
+.rodape-actions {
+  margin-bottom: 14px;
+}
+
+.rodape-github-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(232, 201, 122, 0.25);
+  color: #e4d4b9;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.25s ease;
+}
+
+.rodape-github-btn:hover {
+  background-color: rgba(232, 201, 122, 0.15);
+  border-color: #e8c97a;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(232, 201, 122, 0.2);
 }
 
 .rodape-bloco-tecnologias h4 {

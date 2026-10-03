@@ -4,6 +4,12 @@
     <link rel="shortcut icon" href="src/imgs/Logo.png" type="image/x-icon">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Resgate da Noite: Plataforma interativa de conscientização e pesquisa sobre os impactos da poluição luminosa e preservação do céu noturno." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="src/styles/root.css" />
     <link rel="stylesheet" href="src/styles/open-sans.css" />
@@ -12,48 +18,49 @@
     <link rel="stylesheet" href="src/styles/inicio.css" />
     <link rel="stylesheet" href="src/styles/cards.css" />
     <link rel="stylesheet" href="src/styles/dashboard.css" />
-    <link rel="stylesheet" href="src/styles/mini-section.css" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.css"
-    />
     <link rel="stylesheet" href="src/styles/image-comparisons.css" />
     <link rel="stylesheet" href="src/styles/impactos.css" />
     <link rel="stylesheet" href="src/styles/solucoes.css">
     <link rel="stylesheet" href="src/styles/sobre-nos.css">
     <link rel="stylesheet" href="src/styles/footer.css">
     <link rel="stylesheet" href="src/styles/simulador.css">
-
     <link rel="stylesheet" href="src/styles/media-query.css">
 
     <title>Resgate da Noite</title>
-  </head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T68RQH5TBY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-T68RQH5TBY');
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T68RQH5TBY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-T68RQH5TBY');
+    </script>
+  </head>
   <body>
+    <!-- Link de acessibilidade para pular direto ao conteúdo -->
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
     <!-- HEADER/NAV -->
     <header>
-      <img src="src/imgs/Logo.png" alt="" />
-      <h1>Resgate da Noite</h1>
+      <a href="#inicio" class="header-brand" title="Ir para o início">
+        <img src="src/imgs/Logo.png" alt="Logotipo Resgate da Noite" />
+        <h1>Resgate da Noite</h1>
+      </a>
 
-      <button class="hamburger" aria-label="Abrir menu de navegação">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </button>
+      <button class="hamburger" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu-navegacao">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
 
-      <nav>
+      <nav id="menu-navegacao" aria-label="Navegação principal">
         <a href="#inicio">INÍCIO</a>
         <a href="#definicao">DEFINIÇÃO</a>
         <a href="#causas">CAUSAS</a>
         <a href="#impactos">IMPACTOS</a>
+        <a href="#chamada-simulador">SIMULADOR</a>
         <a href="#solucoes">SOLUÇÕES</a>
         <a href="#respostas">RESPOSTAS</a>
         <a href="#sobre-nos">SOBRE NÓS</a>
@@ -61,17 +68,20 @@
           class="button"
           href="https://docs.google.com/forms/d/e/1FAIpQLSfMpGOoivdtLeNdx_k7RC8SuZtHq3N3GoI91ykCIIpgFHyUOw/viewform?usp=dialog"
           target="_blank"
-          title="Ir para o formulário"
-          >Formulário ➜</a
-        >
+          rel="noopener noreferrer"
+          title="Ir para o formulário de pesquisa"
+          >Formulário ➜</a>
       </nav>
     </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main id="conteudo-principal">
 
     <!-- INICIO -->
     <section id="inicio" class="">
       <div class="video-container">
-        <video autoplay loop muted class="video-bg">
-          <source src="/src/videos/night_sky_bg.mp4" />
+        <video autoplay loop muted playsinline class="video-bg" aria-hidden="true">
+          <source src="src/videos/night_sky_bg.mp4" type="video/mp4" />
         </video>
       </div>
       <div class="title">
@@ -91,59 +101,79 @@
       <a
         href="https://docs.google.com/forms/d/e/1FAIpQLSfMpGOoivdtLeNdx_k7RC8SuZtHq3N3GoI91ykCIIpgFHyUOw/viewform?usp=dialog"
         target="_blank"
-        title="Ir para o formulário"
-        >Conheça nosso formulário</a
-      >
+        rel="noopener noreferrer"
+        title="Ir para o formulário de pesquisa"
+        >Conheça nosso formulário</a>
     </section>
 
     <!-- DEFINICAO -->
     <section id="definicao" class="reveal">
-      <!-- Imagem de fundo -->
-      <div class="img-definicao"></div>
+      <div class="definicao-container">
+        <div class="section-title-wrap">
+          <h2 class="section-title font-display">O QUE É POLUIÇÃO LUMINOSA?</h2>
+        </div>
 
-      <!-- Texto principal -->
-      <div class="texto-definicao">
-        <h2>O QUE É?</h2>
-        <span class="section-title-line" style="margin-left: 16px"></span>
-      </div>
+        <div class="definicao-grid">
+          <div class="definicao-content">
+            <p class="definicao-lead">
+              A poluição luminosa é a alteração dos níveis naturais de escuridão causada pela emissão excessiva, desregulada ou mal direcionada de luz artificial durante a noite (Bará & Falchi, 2023). O rápido avanço dos centros urbanos transformou a noite natural em um permanente crepúsculo artificial.
+            </p>
 
-      <!-- Círculos decorativos -->
-      <div class="circle-definicao"></div>
-      <div class="circle-definicao-2"></div>
+            <div class="definicao-cards">
+              <div class="definicao-card">
+                <h3 class="definicao-card-title">Clarão Celeste Artificial (Skyglow)</h3>
+                <p class="definicao-card-text">
+                  Luminárias desprotegidas e fachadas comerciais emitem luz para cima e para os lados. Na atmosfera, esse feixe colide com partículas de poeira e aerossóis, dispersando-se e criando uma cúpula luminosa que ofusca as estrelas e apaga a Via Láctea mesmo a dezenas de quilômetros das cidades (Sánchez de Miguel et al., 2021).
+                </p>
+              </div>
 
-      <!-- Texto dentro do círculo -->
-      <div class="circle-text">
-        É quando o uso excessivo de luz altera os níveis naturais da
-        luminosidade durante o período noturno.
-      </div>
-
-      <div class="mini-section">
-        <p>ARRASTE PARA COMPARAR</p>
-      </div>
-
-      <div class="image-comparisons">
-        <div class="wrapper">
-          <!-- Container holding both images -->
-          <div class="images">
-            <div class="img-1">
-              <span class="label">Céu urbano</span>
+              <div class="definicao-card">
+                <h3 class="definicao-card-title">Intrusão e Desperdício Energético</h3>
+                <p class="definicao-card-text">
+                  Luz projetada diretamente em janelas e fachadas residenciais afeta o descanso e inibe a secreção de melatonina (Randjelović et al., 2023). Trata-se de energia pública e privada desperdiçada iluminando inutilmente o espaço, sem utilidade para a segurança nas vias (Scorzafava, 2022; IDA, 2007).
+                </p>
+              </div>
             </div>
-            <!-- First image container -->
-            <div class="img-2">
-              <span class="label">Céu preservado</span>
+
+            <div class="definicao-callout">
+              <p>
+                <strong>Interaja com o comparador:</strong> arraste a linha central para visualizar o contraste real entre um grande polo metropolitano e a nitidez de uma noite preservada sob céu escuro.
+              </p>
             </div>
-            <!-- Second image container (overlay) -->
           </div>
 
-          <!-- Slider control for adjusting image comparison -->
-          <div class="slider">
-            <!-- Drag line indicating the comparison boundary -->
-            <div class="drag-line">
-              <span></span>
-              <!-- Circular handle for dragging -->
+          <div class="definicao-slider-col">
+            <div class="image-comparisons">
+              <div class="wrapper">
+                <div class="images">
+                  <div class="img-1">
+                    <span class="label">Céu urbano</span>
+                  </div>
+                  <div class="img-2">
+                    <span class="label">Céu preservado</span>
+                  </div>
+                </div>
+
+                <div class="slider">
+                  <div class="drag-line">
+                    <span></span>
+                  </div>
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="50"
+                    aria-label="Controle de comparação entre céu urbano e céu preservado"
+                  />
+                </div>
+              </div>
             </div>
-            <!-- Range input for controlling the slider -->
-            <input type="range" min="0" max="100" value="50" />
+
+            <div class="slider-caption-bar">
+              <span class="caption-bortle">Céu Urbano (Bortle 8–9)</span>
+              <span class="caption-instruction">Arraste para comparar</span>
+              <span class="caption-bortle">Céu Preservado (Bortle 1–2)</span>
+            </div>
           </div>
         </div>
       </div>
@@ -154,12 +184,8 @@
       <div class="causas-container">
         <div class="section-title-wrap">
           <h2 class="section-title font-display">
-            <span class="section-title-line"></span>
             CAUSAS
           </h2>
-          <p class="section-subtitle">
-            por que o céu noturno está desaparecendo
-          </p>
         </div>
 
         <div class="causas-grid" id="causas-grid">
@@ -170,11 +196,10 @@
           >
             <div class="causa-img-wrap">
               <img
-                src="/src/imgs/card-causas-1.png"
+                src="src/imgs/card-causas-1.png"
                 alt="Excesso de iluminação urbana"
                 loading="lazy"
               />
-              <span class="causa-num">01</span>
             </div>
             <div class="causa-body">
               <div class="causa-icon icon-amber">
@@ -194,8 +219,8 @@
                 </svg>
               </div>
               <h3 class="causa-title">Excesso de iluminação urbana</h3>
-              <p class="causa-short">Cidades brilham acima do necessário.</p>
-              <span class="causa-tag tag-urbano">Urbano</span>
+              <p class="causa-short">Cúpulas de luz artificial ofuscam as estrelas a quilômetros de distância.</p>
+              <span class="causa-link">Ver dados e impacto ➜</span>
             </div>
           </button>
 
@@ -206,11 +231,10 @@
           >
             <div class="causa-img-wrap">
               <img
-                src="/src/imgs/card-causas-2.png"
+                src="src/imgs/card-causas-2.png"
                 alt="Luminárias mal direcionadas"
                 loading="lazy"
               />
-              <span class="causa-num">02</span>
             </div>
             <div class="causa-body">
               <div class="causa-icon icon-blue">
@@ -228,8 +252,8 @@
                 </svg>
               </div>
               <h3 class="causa-title">Luminárias mal direcionadas</h3>
-              <p class="causa-short">Postes sem shields desperdiçam luz.</p>
-              <span class="causa-tag tag-infra">Infraestrutura</span>
+              <p class="causa-short">Postes sem anteparo espalham luminosidade para o céu em vez do chão.</p>
+              <span class="causa-link">Ver dados e impacto ➜</span>
             </div>
           </button>
 
@@ -240,11 +264,10 @@
           >
             <div class="causa-img-wrap">
               <img
-                src="/src/imgs/card-causas-3.png"
+                src="src/imgs/card-causas-3.png"
                 alt="Publicidade luminosa excessiva"
                 loading="lazy"
               />
-              <span class="causa-num">03</span>
             </div>
             <div class="causa-body">
               <div class="causa-icon icon-purple">
@@ -263,8 +286,8 @@
                 </svg>
               </div>
               <h3 class="causa-title">Publicidade luminosa excessiva</h3>
-              <p class="causa-short">Outdoors digitais 24h sem regulação.</p>
-              <span class="causa-tag tag-urbano">Urbano</span>
+              <p class="causa-short">Painéis de LED e letreiros comerciais ligados com brilho máximo a noite toda.</p>
+              <span class="causa-link">Ver dados e impacto ➜</span>
             </div>
           </button>
 
@@ -275,11 +298,10 @@
           >
             <div class="causa-img-wrap">
               <img
-                src="/src/imgs/card-causas-4.png"
+                src="src/imgs/card-causas-4.png"
                 alt="LEDs frios"
                 loading="lazy"
               />
-              <span class="causa-num">04</span>
             </div>
             <div class="causa-body">
               <div class="causa-icon icon-blue">
@@ -296,9 +318,9 @@
                   <path d="M10 13.5V5a2 2 0 114 0v8.5a4 4 0 11-4 0z" />
                 </svg>
               </div>
-              <h3 class="causa-title">LEDs frios (azulados)</h3>
-              <p class="causa-short">Acima de 4000K se espalham mais.</p>
-              <span class="causa-tag tag-bio">Biológico</span>
+              <h3 class="causa-title">LEDs frios e telas noturnas</h3>
+              <p class="causa-short">Luz azulada e telas de dispositivos dispersam mais pelo ar e afetam o sono.</p>
+              <span class="causa-link">Ver dados e impacto ➜</span>
             </div>
           </button>
 
@@ -309,11 +331,10 @@
           >
             <div class="causa-img-wrap">
               <img
-                src="/src/imgs/card-causas-5.png"
+                src="src/imgs/card-causas-5.png"
                 alt="Sem controle de horário"
                 loading="lazy"
               />
-              <span class="causa-num">05</span>
             </div>
             <div class="causa-body">
               <div class="causa-icon icon-amber">
@@ -332,8 +353,8 @@
                 </svg>
               </div>
               <h3 class="causa-title">Sem controle de horário</h3>
-              <p class="causa-short">Iluminação máxima a noite inteira.</p>
-              <span class="causa-tag tag-infra">Infraestrutura</span>
+              <p class="causa-short">Ruas e pátios mantêm potência máxima durante a madrugada sem pedestres.</p>
+              <span class="causa-link">Ver dados e impacto ➜</span>
             </div>
           </button>
         </div>
@@ -364,10 +385,8 @@
       <div class="impactos-container">
         <div class="section-title-wrap">
           <h2 class="section-title font-display">
-            <span class="section-title-line"></span>
             IMPACTOS
           </h2>
-          <p class="section-subtitle">as consequências que não vemos</p>
         </div>
 
         <div class="impactos-grid">
@@ -391,8 +410,7 @@
               da humanidade dorme sob céu com poluição luminosa
             </div>
             <p class="impacto-texto">
-              A exposição à luz artificial noturna suprime a melatonina,
-              aumentando riscos de insônia, depressão, obesidade e cânceres.
+              A exposição à luz artificial noturna suprime a melatonina e desregula o ciclo circadiano, elevando riscos de insônia, depressão e distúrbios metabólicos (Randjelović et al., 2023; Almeida et al., 2025).
             </p>
           </div>
 
@@ -418,9 +436,7 @@
               espécies animais afetadas diretamente
             </div>
             <p class="impacto-texto">
-              Aves migratórias perdem orientação, tartarugas marinhas desviam
-              das praias e insetos polinizadores morrem atraídos pelas fontes de
-              luz.
+              Aves perdem rotas migratórias, tartarugas desviam das praias e polinizadores sofrem queda de 62% nas visitas noturnas, reduzindo a frutificação (Knop et al., 2017; NUCLIO, 2019; Viera-Pérez et al., 2019).
             </p>
           </div>
 
@@ -443,16 +459,37 @@
             </div>
             <div class="impacto-numero font-display">8,64M</div>
             <div class="impacto-label">
-              toneladas de CO₂ geradas por ano só pelo desperdício de iluminação
-              pública
+              toneladas de CO₂ geradas por ano só pelo desperdício de iluminação pública
             </div>
             <p class="impacto-texto">
-              30% de toda a luz emitida por luminárias externas é desperdiçada —
-              equivalente a 3,6 milhões de toneladas de carvão ou 12,9 milhões
-              de barris de petróleo por ano (IDA, 2007).
+              30% de toda a luz emitida por luminárias externas é desperdiçada para o espaço, gerando emissões indiretas de efeito estufa e custo anual de US$ 50 bilhões (IDA, 2007; IPCC, 2006; Scorzafava, 2022).
             </p>
-              </div>
+          </div>
+
+          <div class="impacto-card">
+            <div class="impacto-icone">
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#e8c97a"
+                stroke-width="1.4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                <path d="M2 12h20" />
+              </svg>
             </div>
+            <div class="impacto-numero font-display">1/3</div>
+            <div class="impacto-label">
+              da população mundial não vê a Via Láctea
+            </div>
+            <p class="impacto-texto">
+              Mais de 80% da humanidade e 99% na Europa e EUA vivem sob céus ofuscados, com rápida redução da visibilidade estelar relatada por cidadãos cientistas (Falchi et al., 2016; Kyba et al., 2023).
+            </p>
           </div>
         </div>
       </div>
@@ -460,29 +497,45 @@
 
     <!--SIMULADOR-->
     <section id="chamada-simulador" class="reveal">
-  <div class="simulador-container">
-    
-    <div class="section-title-wrap" style="text-align: center;">
-      <h2 class="section-title font-display" style="font-size: 30pt;">
-        <span class="section-title-line"></span>
-        LABORATÓRIO INTERATIVO
-      </h2>
-      <p class="section-subtitle section-subtitle-1 " style="margin-bottom: 25px;">
-        Experimente o impacto da iluminação urbana em tempo real
-      </p>
-    </div>
+      <div class="simulador-container">
+        <div class="simulador-card-wrapper">
+          <div class="simulador-info">
+            <div class="section-title-wrap">
+              <h2 class="section-title font-display" style="font-size: 30pt;">
+                LABORATÓRIO INTERATIVO
+              </h2>
+            </div>
 
-    <div class="simulador-conteudo">
-      <p class="simulador-texto">
-        Como as luzes da cidade afetam a nossa visão das estrelas? Desenvolvemos um <strong>simulador digital exclusivo</strong> onde você assume o controle da iluminação urbana. Adicione postes, ligue refletores e veja o fenômeno do <em>Skyglow</em> acontecer diante dos seus olhos, apagando o brilho do céu noturno.
-      </p>
-      
-      <a href="routes/simulador/index.html" class="btn-acessar-simulador">
-        Abrir Simulador Interativo
-      </a>
-    </div>
-  </div>
-</section>
+            <p class="simulador-texto">
+              Veja na prática como a luz artificial altera a visibilidade das estrelas. No nosso laboratório interativo, você assume o controle da fonte de luz, move a lanterna com o joystick ou mouse e regula a intensidade para testar o efeito do espalhamento atmosférico (Skyglow) em tempo real.
+            </p>
+
+            <ul class="simulador-features">
+              <li>Manipulação direcional do foco de luz em tempo real</li>
+              <li>Ajuste contínuo da potência luminosa para simular diferentes intensidades urbanas</li>
+              <li>Observação direta da dispersão atmosférica e do apagamento das constelações</li>
+            </ul>
+
+            <div class="simulador-action">
+              <a href="routes/simulador/index.html" class="btn-acessar-simulador">
+                Abrir Simulador Interativo ➜
+              </a>
+            </div>
+          </div>
+
+          <div class="simulador-preview">
+            <a href="routes/simulador/index.html" class="preview-frame" title="Clique para abrir o simulador">
+              <span class="preview-title">Simulação Interativa de Dispersão</span>
+              <div class="preview-illustration">
+                <img src="routes/simulador/lanterna.png" alt="Lanterna do Simulador" class="preview-lanterna" />
+                <div class="preview-beam"></div>
+              </div>
+              <span class="preview-cta">Acessar Laboratório ➜</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!--SOLUÇÕES-->
     <section id="solucoes" class="reveal">
@@ -491,12 +544,8 @@
       <!-- Header -->
       <div class="section-title-wrap">
           <h2 class="section-title font-display">
-            <span class="section-title-line"></span>
             SOLUÇÕES
           </h2>
-          <p class="section-subtitle">
-            O caminho para resgatar a noite
-          </p>
     </div>
 
       <!-- Accordion -->
@@ -504,9 +553,8 @@
         
         <!-- Item 01 (Começa Aberto) -->
         <div class="accordion-item is-open">
-          <button class="accordion-header">
-            <span class="number">01</span>
-            <span class="item-title">Luminárias com direcionamento correto</span>
+          <button class="accordion-header" aria-expanded="true">
+            <span class="item-title">Luminárias com direcionamento correto (Full-Cutoff)</span>
             <span class="arrow-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="6 9 12 15 18 9" />
@@ -515,16 +563,15 @@
           </button>
           <div class="accordion-content-wrapper">
             <div class="accordion-content">
-              <p>Shields e armaduras full-cutoff direcionam 100% da luz para o solo, eliminando completamente o vazamento espúrio de luminosidade direcionada para cima e para o horizonte.</p>
+              <p>Luminárias com anteparos (Full-Cutoff) direcionam o feixe de luz exclusivamente para o solo, eliminando o desperdício de iluminação lançada para cima e para as janelas (IDA, 2007; Scorzafava, 2022).</p>
             </div>
           </div>
         </div>
 
         <!-- Item 02 -->
         <div class="accordion-item">
-          <button class="accordion-header">
-            <span class="number">02</span>
-            <span class="item-title">Iluminação inteligente com sensores</span>
+          <button class="accordion-header" aria-expanded="false">
+            <span class="item-title">Iluminação inteligente com sensores de presença</span>
             <span class="arrow-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="6 9 12 15 18 9" />
@@ -533,16 +580,15 @@
           </button>
           <div class="accordion-content-wrapper">
             <div class="accordion-content">
-              <p>Sensores de presença avançados e dimmers automáticos reduzem de forma programada a intensidade luminosa de vias públicas e pátios comerciais quando não há circulação de pessoas.</p>
+              <p>Sensores de presença e sistemas de dimerização reduzem a potência em vias e pátios durante a madrugada sem fluxo de pessoas, economizando energia com segurança (IPCC, 2006; COBRIC, 2026).</p>
             </div>
           </div>
         </div>
 
         <!-- Item 03 -->
         <div class="accordion-item">
-          <button class="accordion-header">
-            <span class="number">03</span>
-            <span class="item-title">Substituição por LEDs âmbar (2700K ou menos)</span>
+          <button class="accordion-header" aria-expanded="false">
+            <span class="item-title">Lâmpadas com temperatura de cor quente (âmbar)</span>
             <span class="arrow-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="6 9 12 15 18 9" />
@@ -551,16 +597,15 @@
           </button>
           <div class="accordion-content-wrapper">
             <div class="accordion-content">
-              <p>Luminárias de temperatura de cor quente (âmbar) dispersam consideravelmente menos partículas na atmosfera devido ao comprimento de onda e causam um impacto infinitamente menor sobre o ciclo biológico da fauna noturna.</p>
+              <p>LEDs com temperatura abaixo de 2700K (luz âmbar) dispersam muito menos claridade atmosférica por espalhamento Rayleigh e preservam o ciclo biológico da fauna e o sono humano (Randjelović et al., 2023; Almeida et al., 2025).</p>
             </div>
           </div>
         </div>
 
         <!-- Item 04 -->
         <div class="accordion-item">
-          <button class="accordion-header">
-            <span class="number">04</span>
-            <span class="item-title">Regulamentação e legislação</span>
+          <button class="accordion-header" aria-expanded="false">
+            <span class="item-title">Regulamentação pública e leis municipais</span>
             <span class="arrow-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="6 9 12 15 18 9" />
@@ -569,16 +614,15 @@
           </button>
           <div class="accordion-content-wrapper">
             <div class="accordion-content">
-              <p>Apoio e mobilização direcionada a leis municipais e decretos que limitem tetos de emissão por metro quadrado, vetem outdoors comerciais após a meia-noite e organizem zonas escuras protegidas.</p>
+              <p>Normas urbanas que exigem luminárias adequadas, proíbem outdoors com brilho excessivo de madrugada e criam áreas de preservação do céu noturno, medida apoiada por 72,1% dos participantes (Bará & Falchi, 2023; COBRIC, 2026).</p>
             </div>
           </div>
         </div>
 
         <!-- Item 05 -->
         <div class="accordion-item">
-          <button class="accordion-header">
-            <span class="number">05</span>
-            <span class="item-title">Educação e conscientização</span>
+          <button class="accordion-header" aria-expanded="false">
+            <span class="item-title">Educação e conscientização comunitária</span>
             <span class="arrow-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="6 9 12 15 18 9" />
@@ -587,7 +631,7 @@
           </button>
           <div class="accordion-content-wrapper">
             <div class="accordion-content">
-              <p>Projetos científicos integrados como este desenvolvido na Etec Dr. Ruth Cardoso! O levantamento estatístico regional, a análise de dados e a ampla divulgação digital formam o alecerce fundamental para a mudança de comportamento social.</p>
+              <p>Iniciativas científicas integradas como este projeto na Etec Dr. Ruth Cardoso. A educação ambiental aliada a ferramentas interativas e dados reais sensibiliza a comunidade escolar e a sociedade (Dias, 2010; COBRIC, 2026).</p>
             </div>
           </div>
         </div>
@@ -604,22 +648,58 @@
 <section id="respostas" class="reveal">
   <div class="respostas-container">
 
-    <!-- Header da Seção -->
-    <div class="section-title-wrap">
+    <!-- Header Superior Dinâmico das Respostas -->
+    <div class="respostas-top-bar">
+      <div class="respostas-header-left">
+        <div class="section-title-wrap">
           <h2 class="section-title font-display">
-            <span class="section-title-line"></span>
             RESPOSTAS DO FORMULÁRIO
           </h2>
-          <p class="section-subtitle" style="margin-bottom: 10px;">
-            Métricas de engajamento regional
-          </p>
-    </div>
-    
+        </div>
+        <p class="respostas-status">
+          Levantamento de percepção pública realizado com a comunidade da Etec Dr. Ruth Cardoso e moradores da região.
+        </p>
+      </div>
 
-    <!-- Card do Contador de Participantes -->
-    <div class="contador-card">
-      <div class="contador-label">Total de Participantes Conscientes</div>
-      <div id="numeroTotal" class="contador-numero">…</div>
+      <div class="contador-card-compact" id="contadorCard">
+        <div class="contador-live-header">
+          <span class="live-pulse-badge">
+            <span class="live-dot-ping"></span>
+            <span class="live-dot-core"></span>
+            <span class="live-texto">Ao Vivo • Sincronizado</span>
+          </span>
+          <span id="contadorStatus" class="contador-status-texto">Pronto</span>
+        </div>
+
+        <div class="contador-label">Total de Respostas Coletadas</div>
+
+        <div class="contador-numero-container">
+          <div id="numeroTotal" class="contador-numero">…</div>
+          <div id="badgeIncremento" class="badge-incremento">+1</div>
+        </div>
+
+        <div class="contador-acoes">
+          <button id="btnAtualizarDados" class="btn-live-action" type="button" title="Sincronizar com o banco de respostas agora">
+            <svg class="spin-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="23 4 23 10 17 10"></polyline>
+              <polyline points="1 20 1 14 7 14"></polyline>
+              <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+            </svg>
+            <span>Atualizar dados ao vivo</span>
+          </button>
+        </div>
+
+        <!-- Notificação de Impacto em Tempo Real -->
+        <div id="notificacaoImpacto" class="notificacao-impacto" style="display: none;">
+          <div class="notificacao-inner">
+            <span class="notificacao-icone">🌟</span>
+            <div class="notificacao-conteudo">
+              <strong id="notificacaoTitulo">Você fez a diferença!</strong>
+              <p id="notificacaoTexto">Sua resposta foi computada e aumentou o total da pesquisa ao vivo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Container de Erro (Oculto por padrão) -->
@@ -632,8 +712,8 @@
       <div class="grafico-card">
         <h3 class="grafico-titulo">Conhecimento sobre Poluição Luminosa</h3>
         <div class="canvas-wrapper">
-          <canvas id="graficoConhecimento"></canvas>
-          <div id="loading-pie" class="loading-placeholder">Sincronizando com o Google Sheets…</div>
+          <canvas id="graficoConhecimento" role="img" aria-label="Gráfico de pizza mostrando o nível de conhecimento prévio dos participantes sobre poluição luminosa"></canvas>
+          <div id="loading-pie" class="loading-placeholder">Carregando dados da pesquisa…</div>
         </div>
       </div>
 
@@ -641,8 +721,8 @@
       <div class="grafico-card">
         <h3 class="grafico-titulo">Visibilidade Atual do Céu Noturno</h3>
         <div class="canvas-wrapper">
-          <canvas id="graficoCeu"></canvas>
-          <div id="loading-bar" class="loading-placeholder">Sincronizando com o Google Sheets…</div>
+          <canvas id="graficoCeu" role="img" aria-label="Gráfico de barras demonstrando a percepção da visibilidade de estrelas no céu da região"></canvas>
+          <div id="loading-bar" class="loading-placeholder">Carregando dados da pesquisa…</div>
         </div>
       </div>
 
@@ -650,8 +730,8 @@
       <div class="grafico-card">
         <h3 class="grafico-titulo">Apoio a Medidas de Redução de Luz</h3>
         <div class="canvas-wrapper">
-          <canvas id="graficoApoio"></canvas>
-          <div id="loading-apoio" class="loading-placeholder">Sincronizando com o Google Sheets…</div>
+          <canvas id="graficoApoio" role="img" aria-label="Gráfico de rosca ilustrando o apoio da população a políticas públicas e mitigação de iluminação"></canvas>
+          <div id="loading-apoio" class="loading-placeholder">Carregando dados da pesquisa…</div>
         </div>
       </div>
 
@@ -659,73 +739,144 @@
   </div>
 </section>
 
-<!-- SEÇÃO SOBRE NÓS E ARTIGO CIENTÍFICO -->
+<!-- SEÇÃO SOBRE NÓS -->
 <section id="sobre-nos" class="reveal">
   <div class="sobre-container">
     
     <div class="sobre-projeto-grid">
       <div class="sobre-texto-institucional">
         <div class="section-title-wrap">
-          <h2 class="section-title font-display" style="font-size: 30pt;">
-            <!--<span class="section-title-line"></span>-->
+          <h2 class="section-title font-display">
             SOBRE O RESGATE DA NOITE
           </h2>
-          <p class="section-subtitle" style="margin-bottom: 10px;">
-            Quem está por trás do projeto
-          </p>
         </div>
         
         <p class="sobre-paragrafo">
-          Este projeto nasceu dentro da <strong>Etec Doutora Ruth Cardoso (São Vicente - SP)</strong>, como parte integrante dos requisitos de avaliação acadêmica da instituição. Movido pelo desejo de entender os impactos silenciosos da poluição luminosa, o trabalho investiga profundamente como o excesso de luz artificial afeta a biodiversidade, a estabilidade ecológica e a saúde humana.
+          O <strong>Resgate da Noite</strong> é um projeto científico e comunitário desenvolvido por estudantes da <strong>Etec Doutora Ruth Cardoso</strong>, em São Vicente (SP). Nosso trabalho investiga como a poluição luminosa e o excesso de iluminação artificial noturna afetam os ecossistemas, a saúde do sono e o consumo de energia.
         </p>
         <p class="sobre-paragrafo">
-          Através de uma abordagem metodológica que une conceitos de física óptica, biologia celular e tecnologia, nossa missão é conscientizar a comunidade regional e propor estratégias sustentáveis para que nossas cidades possam crescer em segurança sem apagar, de forma definitiva, o brilho do céu noturno.
+          Unindo pesquisa empírica, revisão bibliográfica e tecnologia aberta de conscientização, queremos demonstrar que é possível ter cidades seguras e bem iluminadas sem apagar o patrimônio natural do céu estrelado.
         </p>
       </div>
 
-      <!-- ARTIGO CIENTÍFICO 
-      <div class="sobre-artigo-card">
-        <div class="artigo-badge">Documento Oficial</div>
-        <h3>Artigo Científico</h3>
-        <p>
-          Acesse a pesquisa acadêmica completa sob o título original <strong>"POLUIÇÃO LUMINOSA: Impactos nos ecossistemas e na saúde humana"</strong>. Confira nossos dados estatísticos sobre consumo energético, referências regulamentares e a fundamentação teórica do projeto.
-        </p>
+      <div class="sobre-metodologia-card">
+        <div class="metodologia-header">
+          <h3 class="metodologia-titulo">Frentes de Investigação</h3>
+          <p class="metodologia-sub">Metodologia científica aplicada à Baixada Santista</p>
+        </div>
         
-        <a href="#" target="_blank" class="btn-download-artigo">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          Ler Artigo Completo (PDF)
-        </a>
+        <div class="metodologia-lista">
+          <div class="metodologia-item">
+            <strong>Revisão Narrativa da Literatura</strong>
+            <p>Mapeamento de evidências científicas nas bases SciELO, PubMed e Google Acadêmico e dados oficiais da International Dark-Sky Association (IDA).</p>
+          </div>
+          <div class="metodologia-item">
+            <strong>Desenvolvimento Tecnológico e Simulador</strong>
+            <p>Plataforma web de acesso público com simulador de Skyglow, diagramação responsiva e esteira de entrega contínua (CI/CD) via Vercel.</p>
+          </div>
+          <div class="metodologia-item">
+            <strong>Levantamento Amostral Primário</strong>
+            <p>Aplicação de questionário anônimo com a comunidade escolar (n=61), identificando hábitos de telas noturnas e alta adesão a medidas mitigadoras.</p>
+          </div>
+        </div>
       </div>
-      -->
     </div>
+
   </div>
 </section>
-
 
 <section id="cta-formulario" class="reveal">
   <div class="cta-container">
-    
-    <div class="section-title-wrap" style="text-align: center;">
-      <h2 class="section-title font-display" style="font-size: 30pt;">
-        AJUDE O RESGATE DA NOITE
-      </h2>
-      <span class="section-title-line"></span>
-      <p class="section-subtitle" style="margin-bottom: 25px;">
-        Sua voz importa para mapear o brilho das nossas cidades
-      </p>
-    </div>
+    <div class="cta-card">
+      <div class="cta-text-side">
+        <h2 class="cta-title font-display">AJUDE O RESGATE DA NOITE</h2>
+        <p class="cta-texto">
+          O projeto ganha força com dados reais. Leva menos de 2 minutos para responder ao nosso formulário e o seu relato vai direto para o dashboard de estatísticas do nosso site. Vamos juntos defender o nosso direito ao céu estrelado?
+        </p>
+      </div>
 
-    <div class="cta-conteudo">
-      <p class="cta-texto">
-        O projeto ganha força com dados reais. Leva menos de 2 minutos para responder ao nosso formulário e o seu relato vai direto para o dashboard de estatísticas do nosso site. Vamos juntos defender o nosso direito ao céu estrelado?
-      </p>
-      
-      <a href="#" target="_blank" class="btn-cta-forms">
-        Ir para o Formulário
-      </a>
+      <div class="cta-action-side">
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfMpGOoivdtLeNdx_k7RC8SuZtHq3N3GoI91ykCIIpgFHyUOw/viewform?usp=dialog"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-cta-forms"
+          title="Ir para o formulário de pesquisa"
+        >
+          Ir para o Formulário ➜
+        </a>
+        <span class="cta-nota">Pesquisa anônima e aberta à comunidade</span>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- SEÇÃO DE REFERÊNCIAS BIBLIOGRÁFICAS (COLAPSÁVEL / DROPDOWN ACIMA DO FOOTER) -->
+<section id="referencias-pesquisa">
+  <div class="referencias-container">
+    <button
+      type="button"
+      class="referencias-toggle-btn"
+      id="btnToggleReferencias"
+      aria-expanded="false"
+      aria-controls="referenciasDropConteudo"
+      onclick="toggleReferenciasDropdown()"
+    >
+      <div class="referencias-btn-texto">
+        <span class="referencias-btn-titulo font-display">Referências Bibliográficas da Pesquisa</span>
+        <span class="referencias-btn-sub">12 fontes científicas catalogadas no artigo original submetido ao COBRIC 2026</span>
+      </div>
+      <span class="referencias-btn-badge" id="badgeSetaRef">
+        <span>Ver referências</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </span>
+    </button>
+
+    <div class="referencias-drop-conteudo" id="referenciasDropConteudo" style="display: none;">
+      <div class="referencias-grid">
+        <div class="referencia-item">
+          <p><strong>Almeida MMF, Tavares NN, Silva KMO, Bogado LD.</strong> Impactos da exposição à luz azul na saúde ocular: revisão integrativa de evidências e estratégias preventivas. <em>Journal of Medical and Biosciences Research</em>. 2025;2(2):561-575. DOI: 10.70164/jmbr.v2i2.638.</p>
+        </div>
+        <div class="referencia-item">
+          <p><strong>Bará S, Falchi F.</strong> Artificial light at night: a global disruptor of the night-time environment. <em>Philosophical Transactions of the Royal Society B: Biological Sciences</em>. 2023;378(1892):20220352. DOI: 10.1098/rstb.2022.0352.</p>
+        </div>
+        <div class="referencia-item">
+          <p><strong>Dias GF.</strong> <em>Educação ambiental: princípios e práticas</em>. São Paulo: Gaia; 2010.</p>
+        </div>
+        <div class="referencia-item">
+          <p><strong>Intergovernmental Panel on Climate Change (IPCC).</strong> <em>2006 IPCC Guidelines for National Greenhouse Gas Inventories</em>. Japão: IGES; 2006.</p>
+        </div>
+        <div class="referencia-item">
+          <p><strong>International Dark-Sky Association (IDA).</strong> <em>Is Wasted Renewable Energy Electric Light Pollution?</em> Tucson: IDA; 2007.</p>
+        </div>
+        <div class="referencia-item">
+          <p><strong>Knop E, Zoller L, Ryser R, Gerpe C, Hörler M, Fontaine C.</strong> Artificial light at night as a new threat to pollination. <em>Nature</em>. 2017;548(7666):206-209. DOI: 10.1038/nature23288.</p>
+        </div>
+        <div class="referencia-item">
+          <p><strong>Kyba CCM, Altıntaş YÖ, Walker CE, Newhouse M.</strong> Citizen scientists report global rapid reductions in the visibility of stars from 2011 to 2022. <em>Science</em>. 2023;379(6629):265-268. DOI: 10.1126/science.abq7781.</p>
+        </div>
+        <div class="referencia-item">
+          <p><strong>Núcleo Interativo de Astronomia (NUCLIO).</strong> <em>Poluição Luminosa e os Insetos</em>. Cascais, Portugal: NUCLIO; 2019.</p>
+        </div>
+        <div class="referencia-item">
+          <p><strong>Randjelović P, Stojanović N, Ilić I, Vučković D.</strong> The effect of reducing blue light from smartphone screen on subjective quality of sleep among students. <em>Chronobiology International</em>. 2023;40(3):335-342. DOI: 10.1080/07420528.2023.2173606.</p>
+        </div>
+        <div class="referencia-item">
+          <p><strong>Sánchez de Miguel A, Bennie J, Rosenfeld E, Dzurjak S, Gaston KJ.</strong> First estimation of global trends in nocturnal power emissions reveals acceleration of light pollution. <em>Remote Sensing</em>. 2021;13(16):3311. DOI: 10.3390/rs13163311.</p>
+        </div>
+        <div class="referencia-item">
+          <p><strong>Scorzafava L.</strong> <em>Light is Energy: Estimating the Impact of Light Pollution on Climate Change</em>. Tucson: DarkSky International; 2022.</p>
+        </div>
+        <div class="referencia-item">
+          <p><strong>Viera-Pérez M, Hernández-Calvento L, Hesp PA, Santana-del Pino A.</strong> Effects of artificial light on flowering of foredune vegetation. <em>Ecology</em>. 2019;100(5):e02678. DOI: 10.1002/ecy.2678.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
 
 <footer id="rodape">
   <div class="rodape-container">
@@ -733,22 +884,36 @@
     <div class="rodape-grid">
       <div class="rodape-bloco-info">
         <h3 class="rodape-logo-texto">RESGATE DA NOITE</h3>
-        <p class="rodape-escola">Etec Doutora Ruth Cardoso — São Vicente - SP</p>
-        <p class="copyright">&copy; 2026 Resgate da Noite. Trabalho de componente curricular.</p>
+        <p class="rodape-escola">Etec Doutora Ruth Cardoso • São Vicente (SP)</p>
+        <p class="rodape-sub">Pesquisa de Iniciação Científica submetida ao COBRIC 2026</p>
+        <p class="copyright">&copy; 2026 Resgate da Noite. Código aberto sob licença MIT.</p>
       </div>
 
       <div class="rodape-bloco-tecnologias">
-        <h4>Referências e Tecnologias</h4>
+        <h4>Repositório e Código Aberto</h4>
         <p class="tecnologias-texto">
-          Este ecossistema digital foi arquitetado integrando metodologias de design e inteligência artificial. Nossos agradecimentos e referências às ferramentas utilizadas no desenvolvimento:
+          Desenvolvido com tecnologias web abertas, integração em tempo real e entrega contínua:
         </p>
+        <div class="rodape-actions">
+          <a
+            href="https://github.com/gdvirginio/resgate-da-noite"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rodape-github-btn"
+            title="Acessar repositório público no GitHub"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            <span>Ver Repositório no GitHub ➜</span>
+          </a>
+        </div>
         <div class="tags-tecnologias">
-          <span class="tag-tech">Canva</span>
-          <span class="tag-tech">Gemini</span>
-          <span class="tag-tech">Claude</span>
-          <span class="tag-tech">Lovable</span>
+          <span class="tag-tech">HTML5</span>
+          <span class="tag-tech">CSS3</span>
+          <span class="tag-tech">JavaScript</span>
           <span class="tag-tech">Chart.js</span>
-          <span class="tag-tech">Google Sheets API</span>
+          <span class="tag-tech">Vercel CI/CD</span>
         </div>
       </div>
     </div>
@@ -756,17 +921,43 @@
   </div>
 </footer>
 
-  <script src="src/script/menu-hamb.js"></script>
+    <script src="src/script/menu-hamb.js"></script>
     <script src="src/script/solucoes.js"></script>
     <script src="src/script/impactos.js"></script>
-    <script src="/src/script/causas.js"></script>
-    <script src="src/script/light-map.js"></script>
-    <script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
+    <script src="src/script/causas.js"></script>
     <script src="src/script/image-comparisons.js"></script>
     <script src="src/script/nav-section.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="src/script/reveal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="src/script/dashboard.js"></script>
+    <script>
+      function toggleReferenciasDropdown() {
+        var btn = document.getElementById('btnToggleReferencias');
+        var drop = document.getElementById('referenciasDropConteudo');
+        var badge = document.getElementById('badgeSetaRef');
+        if (!btn || !drop) return;
+
+        var isOculto = drop.style.display === 'none' || drop.style.display === '';
+
+        if (isOculto) {
+          drop.style.display = 'block';
+          btn.setAttribute('aria-expanded', 'true');
+          btn.classList.add('aberto');
+          if (badge) {
+            var label = badge.querySelector('span');
+            if (label) label.textContent = 'Ocultar referências';
+          }
+        } else {
+          drop.style.display = 'none';
+          btn.setAttribute('aria-expanded', 'false');
+          btn.classList.remove('aberto');
+          if (badge) {
+            var label = badge.querySelector('span');
+            if (label) label.textContent = 'Ver referências';
+          }
+        }
+      }
+    </script>
   </body>
 </html>

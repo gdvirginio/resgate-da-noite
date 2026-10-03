@@ -1,114 +1,135 @@
 # 🌌 Resgate da Noite
 
-> **Plataforma web interativa e responsiva dedicada à conscientização, análise e mitigação dos impactos da poluição luminosa nos ecossistemas e na saúde humana.**
+[![COBRIC 2026 - Aprovado](https://img.shields.io/badge/COBRIC_2026-Artigo_Aprovado_%26_Publicado-success?style=for-the-badge&logo=googlescholar)](https://unisanta.br/pesquisa/cobric/)
+[![Deploy Vercel](https://img.shields.io/badge/Vercel-Deploy_Ativo-black?style=for-the-badge&logo=vercel)](https://resgate-da-noite.vercel.app)
+[![Licença MIT](https://img.shields.io/badge/Licen%C3%A7a-MIT-blue?style=for-the-badge)](LICENSE)
+[![Vanilla JS](https://img.shields.io/badge/Stack-HTML5_%7C_CSS3_%7C_Vanilla_JS-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://github.com/gdvirginio/resgate-da-noite)
+
+Plataforma web de pesquisa aplicada e conscientização sobre os impactos da poluição luminosa na saúde humana, na biodiversidade e no equilíbrio ecológico.
 
 ---
 
-## 📌 Sobre o Projeto
+## 📌 Sobre o Projeto e Aprovação no COBRIC 2026
 
-O **Resgate da Noite** é um ecossistema digital desenvolvido para aproximar a ciência do cidadão. Através de uma interface imersiva e de alto contraste, o site expõe o problema do *Skyglow* (brilho difuso do céu), mapeia as suas principais causas, ilustra os impactos ecológicos e humanos por meio de ferramentas visuais dinâmicas, e recolhe o apoio da comunidade para promover políticas públicas de preservação do céu noturno natural.
+O **Resgate da Noite** foi desenvolvido como instrumento metodológico de pesquisa científica por estudantes da **Etec Doutora Ruth Cardoso** (São Vicente/SP).
+
+A plataforma e seus dados fundamentaram o artigo científico avaliado por comitê acadêmico e **aprovado para publicação oficial nos Anais do 18º Congresso Brasileiro de Iniciação Científica (COBRIC – UNISANTA)**:
+
+> **"A NOITE ESTÁ SUMINDO: O IMPACTO DA POLUIÇÃO LUMINOSA NA SAÚDE HUMANA E NA NATUREZA"**  
+> * **Autor Principal:** Gianluca Diogo Virginio  
+> * **Coautora:** Ana Clara Fernandes  
+> * **Orientadoras:** Prof.ª Bárbara de Castro Piauilino e Prof.ª Dr.ª Ana Beatriz Sicchieri Ziotti  
+> * **Sessão Oficial de Apresentação:** 03 de novembro de 2026 (Terça-feira, 19h–21h30) – Campus Unisanta
+
+A plataforma opera como um ecossistema integrado de pesquisa aplicada: reúne fundamentação bibliográfica, levantamento de percepção pública sincronizado em tempo real e um laboratório virtual interativo que simula o espalhamento óptico (*Skyglow*) e a perda de visibilidade estelar em ambiente urbano.
 
 ---
 
-## 🚀 Funcionalidades Principais
+## 🔄 Versões e Evolução do Projeto
 
-* **Hero Section Imersivo:** Abertura em tela cheia (`100vh`) com vídeo de fundo dinâmico e máscara de contraste premium.
-* **Painel Interativo de Causas:** Estrutura tipo *Accordion* (sanfona) para explorar os vetores da poluição luminosa sem sobrecarregar a interface.
-* **Comparação de Imagens Dinâmica:** Integração com componente visual para contrastar cenários com e sem poluição luminosa.
-* **Painel de Dados (Dashboard):** Apresentação gráfica de dados estatísticos de forma limpa e intuitiva.
-* **Design 100% Responsivo:** Menu hambúrguer interativo e adaptação perfeita para Smartphones, Tablets e Computadores.
-* **Canal de Engajamento:** Formulário integrado para captação de apoiantes da causa.
+### Versão do Artigo Científico (`v1.0-artigo`)
+O artigo aprovado no congresso documenta formalmente os métodos e resultados da primeira versão funcional da plataforma. Para assegurar total transparência, auditabilidade e reprodutibilidade científica, essa versão está preservada e congelada nas tags do repositório:
+* **Release Oficial do Artigo:** [`v1.0-artigo`](https://github.com/gdvirginio/resgate-da-noite/releases/tag/v1.0-artigo)
+
+### Integração do Laboratório no Repositório Principal
+Originalmente, o simulador de céu urbano residia em um repositório complementar. Para unificar a arquitetura de software e eliminar redirecionamentos externos, o laboratório óptico foi migrado nativamente para [`routes/simulador/`](routes/simulador/).
+
+### Aprimoramentos em Produção (Versão Atual)
+Após a submissão, a aplicação continuou recebendo melhorias contínuas de engenharia e usabilidade:
+* **Dashboard com Sincronização em Tempo Real:** Integração assíncrona com a API do Google Sheets; o contador de amostras identifica a submissão e recalcula as métricas do formulário ao vivo na aba do usuário.
+* **Simulação Óptica com Canvas API:** Renderização procedural de estrelas em HTML5 Canvas com cintilação orgânica e camada de oclusão luminosa calculada conforme a intensidade da fonte artificial.
+* **Adaptação Dinâmica de Entrada (Device-Aware):** Controle inteligente que desativa botões de tela em desktops (priorizando mouse e atalhos de teclado) e aciona automaticamente joystick virtual tátil em dispositivos móveis.
+* **Estrutura de Evidências Científicas:** Mapeamento de 12 referências bibliográficas indexadas em seção colapsável e citações autor-data no corpo da interface.
+* **Acessibilidade Web:** Links de atalho (*skip to content*) para leitores de tela e padronização semântica das 8 seções temáticas.
+
+---
+
+## 🚀 Módulos da Plataforma
+
+* **Início:** Abertura imersiva contextualizando a perda da noite natural.
+* **O que é Poluição Luminosa:** Conceituação física de *Skyglow* e intrusão com comparativo interativo na Escala de Bortle (8-9 vs 1-2).
+* **Causas:** Mapeamento estruturado dos vetores emissores (luminárias sem anteparo *full-cutoff*, emissão de luz azul e publicidade noturna).
+* **Impactos:** Síntese de dados sobre ritmo circadiano, supressão de melatonina, fauna costeira e desperdício energético.
+* **Laboratório Interativo:** Simulador de feixe direcional e espalhamento atmosférico.
+* **Diretrizes e Soluções:** Medidas práticas de mitigação e desenho luminotécnico eficiente.
+* **Dashboard da Pesquisa:** Visualização gráfica dos dados coletados via Chart.js conectado ao formulário público.
+* **Metodologia e Artigo:** Documentação do projeto de pesquisa desenvolvido na Baixada Santista.
+* **Referências:** Relação das fontes catalogadas conforme normas acadêmicas.
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-A plataforma foi construída utilizando tecnologias nativas e bibliotecas modernas para garantir a máxima performance, acessibilidade e SEO:
+A arquitetura foi concebida propositalmente em tecnologias web nativas, garantindo carregamento rápido, zero dependências externas pesadas e longevidade de código:
 
-* **[HTML5](https://developer.mozilla.org/pt-BR/docs/Web/HTML):** Estruturação semântica e acessível do conteúdo.
-* **[CSS3](https://developer.mozilla.org/pt-BR/docs/Web/CSS):** Estilização avançada com arquitetura modular utilizando *Flexbox* e *CSS Grid*.
-* **[JavaScript (Vanilla JS)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript):** Lógica assíncrona para manipulação de estados do DOM, controlo do menu mobile e gerenciamento do *Accordion*.
-* **[ScrollReveal](https://scrollrevealjs.org/):** Animações fluidas ativadas pelo scroll do utilizador.
-* **[Image Compare Viewer](https://image-compare-viewer.github.io/):** Biblioteca para a ferramenta de comparação visual.
+* **HTML5:** Semântica e acessibilidade.
+* **CSS3:** Layout modular com CSS Grid, Flexbox e variáveis CSS para paleta noturna.
+* **Vanilla JavaScript (ES6+):** Lógica assíncrona (`fetch`), manipulação direta do DOM e controle do simulador.
+* **Canvas API:** Renderização gráfica procedural do céu estrelado.
+* **Chart.js:** Gráficos interativos para exibição dos dados de percepção pública.
+* **ScrollReveal:** Transições visuais na rolagem da página.
+* **Google Apps Script / Sheets API:** Infraestrutura de coleta e sincronização de dados amostrais.
 
 ---
 
-## 📁 Estrutura do Projeto
+## 📁 Estrutura do Repositório
 
 ```text
-├── index.html                 # Página principal da aplicação
-├── README.md                  # Documentação do repositório
-├── routes/                    # Rotas e páginas secundárias
-│   └── simulador/             # Simulador/Laboratório interativo (Skyglow)
+├── index.html                 # Ponto de entrada da plataforma
+├── README.md                  # Documentação técnica e científica
+├── routes/
+│   └── simulador/             # Laboratório interativo de dispersão de luz
 │       ├── index.html         # Interface do simulador
-│       ├── style.css          # Estilos e controles da lanterna
-│       ├── script.js          # Lógica do joystick, mouse e opacidade
-│       ├── lanterna.png       # Asset da lanterna
-│       └── fundo1.png         # Céu estrelado e gradiente de poluição
-└── src/                       # Diretório de recursos do sistema
-    ├── imgs/                  # Imagens, logótipos e ilustrações
-    ├── videos/                # Vídeos em loop de fundo
-    ├── script/                # Scripts modulares (Dashboard, Causas, Accordion, etc.)
+│       ├── style.css          # Estilos e viewport do laboratório
+│       ├── script.js          # Algoritmo de Canvas, joystick e opacidade
+│       └── lanterna.png       # Ativo gráfico da fonte emissora
+└── src/
+    ├── imgs/                  # Ativos visuais e diagramas explicativos
+    ├── videos/                # Mídia de fundo otimizada
+    ├── script/                # Módulos JS (dashboard, dados, interações)
     └── styles/                # Folhas de estilo modulares
-        ├── root.css           # Variáveis globais e paleta de cores
-        ├── nav.css            # Estilos de navegação (Desktop)
-        ├── inicio.css         # Estilo da secção Hero
-        ├── causas.css         # Lógica visual do Accordion
-        ├── impactos.css       # Grade de cartões de impactos
-        ├── media-query.css    # Unificação de regras de responsividade (Mobile)
-        └── ...
 ```
 
 ---
 
-## 🔧 Como Executar o Projeto Localmente
+## 🔧 Execução Local
 
-Não precisas de instalar dependências complexas. Como o projeto foi feito em JavaScript puro, basta seguir estes passos:
+Por utilizar tecnologias nativas, a aplicação não exige instalação de pacotes via npm:
 
-1. **Clona o repositório:**
+1. Clone o repositório:
 ```bash
-git clone [https://github.com/teu-usuario/resgate-da-noite.git](https://github.com/teu-usuario/resgate-da-noite.git)
-
+git clone https://github.com/gdvirginio/resgate-da-noite.git
 ```
 
-
-2. **Navega até a pasta do projeto:**
+2. Acesse a pasta:
 ```bash
 cd resgate-da-noite
-
 ```
 
-
-3. **Abre o ficheiro principal:**
-* Basta dar dois cliques no ficheiro `index.html`, ou
-* Se utilizas o VS Code, clica com o botão direito e seleciona **Open with Live Server** para ter recarregamento automático em tempo real.
-
-  
+3. Execute com qualquer servidor local (ex: extensão **Live Server** do VS Code) ou abra o arquivo `index.html` diretamente em seu navegador.
 
 ---
 
-## 🌐 Deploy e Atualizações
+## 🌐 Deploy e Produção
 
-O site está publicado e disponível na internet através da infraestrutura da **[Vercel](https://vercel.com)**, integrado diretamente com este repositório do GitHub.
+A aplicação está em produção contínua na Vercel com integração ao branch principal do GitHub:
 
-O link de visualização publica é **[Resgate da Noite](https://resgate-da-noite.vercel.app)**
-
-* **Integração Contínua (CI/CD):** Qualquer alteração ou correção efetuada nos ficheiros deste repositório aciona automaticamente uma nova compilação na Vercel, atualizando o site em produção em menos de 10 segundos.
-
----
-
-## 👤 Autores
-
-* **Gianluca Diogo Virginio** - *Desenvolvimento Frontend, UI/UX Design e Pesquisa* - [gdvirginio]([https://www.google.com/search?q=https://github.com/teu-usuario](https://github.com/gdvirginio))
+* **Aplicação em Produção:** [https://resgate-da-noite.vercel.app](https://resgate-da-noite.vercel.app)
+* **Repositório Oficial:** [https://github.com/gdvirginio/resgate-da-noite](https://github.com/gdvirginio/resgate-da-noite)
+* **Versão Documentada no Artigo:** [Tag v1.0-artigo](https://github.com/gdvirginio/resgate-da-noite/releases/tag/v1.0-artigo)
 
 ---
 
-🔬 *Projeto desenvolvido para fins académicos e de conscientização ecológica.*
+## 👥 Equipe de Pesquisa
 
-```
+* **Gianluca Diogo Virginio** – Autor Principal, Desenvolvedor de Software e UI/UX ([GitHub](https://github.com/gdvirginio))
+* **Ana Clara Fernandes** – Coautora, Pesquisa e Coleta de Dados
+* **Prof.ª Bárbara de Castro Piauilino** – Professora Orientadora
+* **Prof.ª Dr.ª Ana Beatriz Sicchieri Ziotti** – Professora Orientadora
 
-### O que deves personalizar antes de salvar?
-1. Na secção `Como Executar o Projeto Localmente`, substitui `teu-usuario` e `resgate-da-noite` pelo teu link real do GitHub.
-2. Na secção `Autores`, substitui pelo teu nome e o link do teu perfil.
+**Instituição:** Etec Doutora Ruth Cardoso • São Vicente (SP)  
+**Congresso:** 18º Congresso Brasileiro de Iniciação Científica (COBRIC 2026) – Universidade Santa Cecília (UNISANTA)
 
-```
+---
+
+Licença MIT. Livre para fins educacionais, científicos e de preservação ambiental.

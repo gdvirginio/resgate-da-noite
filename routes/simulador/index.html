@@ -4,36 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Laboratório e simulador interativo de poluição luminosa urbana - Projeto Resgate da Noite.">
     <title>Laboratório Interativo | Resgate da Noite</title>
     <link rel="shortcut icon" href="../../src/imgs/Logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,300;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <nav class="simulador-nav">
+    <!-- Céu Estrelado Dinâmico em Canvas com Fundo Preto e Cintilação -->
+    <canvas id="ceuEstrelas"></canvas>
+
+    <!-- Topo Autêntico do Projeto -->
+    <header class="simulador-header">
         <a href="../../index.html" class="btn-voltar" title="Voltar ao Resgate da Noite">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="19" y1="12" x2="5" y2="12"></line>
                 <polyline points="12 19 5 12 12 5"></polyline>
             </svg>
             <span>Voltar ao Início</span>
         </a>
-    </nav>
+        <h2>Laboratório Interativo</h2>
+    </header>
 
-    <h2>Laboratório Interativo</h2>
-
-    <div class="luiz">
-        <img class="lantern" src="lanterna.png" alt="Lanterna">
-        <div class="light"></div>
-        <div class="fundo1"></div>
+    <!-- Camada Interativa da Lanterna, Feixe e Máscara de Ofuscamento -->
+    <div class="luiz" id="lanternaTracker">
+        <img class="lantern" src="lanterna.png" alt="Lanterna" id="lanternImg">
+        <div class="light" id="feixeLuz"></div>
+        <div class="fundo1" id="haloDispersao"></div>
     </div>
 
-    <div class="guide">Use o joystick para mover a lanterna. Botões + / − ajustam a intensidade da luz.</div>
-    <div class="fundo"></div>
+    <!-- Guia Autêntica de Instruções -->
+    <div class="guide" id="guideTexto">
+        Arraste a lanterna ou use o joystick / setas. Botões + / − ajustam a intensidade da luz.
+    </div>
 
+    <!-- Controles (Joystick Virtual e Botões + / -) -->
     <div class="controles">
         <div class="joystick" id="joystick">
             <div class="joystick-base"></div>
@@ -41,8 +49,8 @@
         </div>
 
         <div class="botoes">
-            <button class="btn" id="btnMais" aria-label="Aumentar opacidade">+</button>
-            <button class="btn" id="btnMenos" aria-label="Diminuir opacidade">−</button>
+            <button class="btn" id="btnMais" aria-label="Aumentar intensidade">+</button>
+            <button class="btn" id="btnMenos" aria-label="Diminuir intensidade">−</button>
         </div>
     </div>
 

@@ -1,27 +1,29 @@
 .image-comparisons {
-  margin-top: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 /* Container principal */
 .wrapper {
   position: relative;
-  width: 750px;
-  height: 500px;
+  width: 100%;
+  max-width: 620px;
+  height: 440px;
 
   overflow: hidden;
-  border-radius: 28px;
+  border-radius: 24px;
 
   background: #111827;
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 
   box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.25),
-    0 20px 60px rgba(0, 0, 0, 0.35);
+    0 10px 30px rgba(0, 0, 0, 0.35),
+    0 20px 60px rgba(0, 0, 0, 0.45);
 
   transition:
     transform 0.35s ease,

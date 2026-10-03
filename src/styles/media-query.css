@@ -32,20 +32,14 @@
 }
 
 /* --------------------------------------------------------------------------
-   2. SMARTPHONES EM GERAL (max-width: 768px)
+   2. NAVEGAÇÃO RESPONSIVA PARA TABLETS E SMARTPHONES (max-width: 960px)
    -------------------------------------------------------------------------- */
-@media (max-width: 768px) {
-  /* ==========================================
-     SISTEMA DE MENU HAMBÚRGUER (CORRIGIDO E AMPLIADO)
-     ========================================== */
-  /* ==========================================
-     SISTEMA DE MENU HAMBÚRGUER (SEM PONTINHOS OU ARTEFATOS)
-     ========================================== */
+@media (max-width: 960px) {
   header {
     flex-direction: row !important;
     justify-content: space-between !important;
     align-items: center !important;
-    padding: 16px 24px !important;
+    padding: 14px 20px !important;
     position: sticky !important;
     width: 100% !important;
     box-sizing: border-box !important;
@@ -58,7 +52,7 @@
   }
 
   .header-brand img {
-    height: 35px !important;
+    height: 38px !important;
     width: auto !important;
   }
 
@@ -103,7 +97,6 @@
     transform: translateY(8.5px) rotate(45deg) !important;
   }
 
-  /* CORREÇÃO: Além de opacidade 0, encolhemos o elemento a zero para não deixar resíduos de pixel */
   .hamburger.is-active .bar:nth-child(2) {
     opacity: 0 !important;
     transform: scale(0) !important;
@@ -113,7 +106,7 @@
     transform: translateY(-8.5px) rotate(-45deg) !important;
   }
 
-  /* Painel de Navegação de Links (Garante remoção de bolinhas de listas se houver) */
+  /* Painel de Navegação de Links */
   nav,
   nav ul,
   nav li {
@@ -139,16 +132,18 @@
   }
 
   nav.is-active {
-    max-height: 520px !important;
+    max-height: 650px !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
   }
 
-  /* Links Maiores, Confortáveis e sem decorações residuais */
+  /* Links Confortáveis e sem decorações residuais */
   nav a {
     display: block !important;
     width: 100% !important;
     text-align: center !important;
-    padding: 18px 0 !important;
-    font-size: 16px !important;
+    padding: 13px 0 !important;
+    font-size: 15px !important;
     font-weight: 600 !important;
     letter-spacing: 0.03em !important;
     color: #e4d4b9 !important;
@@ -160,14 +155,20 @@
   }
 
   nav a.button {
-    margin: 16px auto !important;
+    margin: 14px auto !important;
     width: 75% !important;
-    padding: 14px 0 !important;
-    font-size: 15px !important;
+    padding: 11px 0 !important;
+    font-size: 14px !important;
     border-radius: 25px !important;
     border-bottom: none !important;
     color: #000000 !important;
   }
+}
+
+/* --------------------------------------------------------------------------
+   3. SMARTPHONES E LAYOUTS MOBILE (max-width: 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
 
   /* ==========================================
      CORREÇÃO UNIVERSAL DE TÍTULOS (ALINHAMENTO ABSOLUTO)
@@ -194,11 +195,8 @@
   }
 
   .section-title-line,
-  .section-title-wrap .section-title-line,
-  .texto-definicao .section-title-line {
-    margin: 0 auto !important;
-    display: block !important;
-    float: none !important;
+  .section-title-wrap .section-title-line {
+    display: none !important;
   }
 
   .section-subtitle {
@@ -286,59 +284,28 @@
   }
 
   /* ==========================================
-     SEÇÃO DEFINIÇÃO
+     SEÇÕES E ESPAÇAMENTOS MOBILE
      ========================================== */
-  #definicao {
-    display: flex !important;
+  #definicao,
+  #causas,
+  #impactos,
+  #chamada-simulador,
+  #solucoes,
+  #respostas,
+  #sobre-nos,
+  #cta-formulario {
+    padding: 42px 16px !important;
+  }
+
+  .definicao-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .slider-caption-bar {
     flex-direction: column !important;
-    padding: 50px 20px !important;
-  }
-
-  .img-definicao {
-    width: 100% !important;
-    height: 250px !important;
-    border-radius: 20px !important;
-    background-image: url("../imgs/definicao-img.png") !important;
-    margin-bottom: 25px !important;
-  }
-
-  .texto-definicao {
-    position: relative !important;
-    top: auto !important;
-    right: auto !important;
-    height: auto !important;
-    padding: 0 !important;
-    margin: 0 auto 20px auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
+    gap: 6px !important;
     text-align: center !important;
-    width: 100% !important;
-  }
-
-  .texto-definicao h2 {
-    font-size: 2rem !important;
-    text-align: center !important;
-    width: 100% !important;
-    margin-bottom: 8px !important;
-  }
-
-  .circle-definicao,
-  .circle-definicao-2 {
-    display: none !important;
-  }
-
-  .circle-text {
-    position: relative !important;
-    top: auto !important;
-    right: auto !important;
-    width: 100% !important;
-    font-size: 15px !important;
-    text-align: center !important;
-    padding: 0 !important;
-    margin-bottom: 30px !important;
-    line-height: 1.6 !important;
   }
 
   /* ==========================================
@@ -381,20 +348,6 @@
     gap: 20px !important;
   }
 
-  .sobre-equipe-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  .perfil-card {
-    flex-direction: column !important;
-    text-align: center !important;
-    padding: 20px !important;
-  }
-
-  .perfil-avatar-wrapper {
-    margin: 0 auto 15px auto !important;
-  }
-
   .rodape-grid {
     grid-template-columns: 1fr !important;
     text-align: center !important;
@@ -407,11 +360,11 @@
 }
 
 /* --------------------------------------------------------------------------
-   3. SMARTPHONES COM TELAS PEQUENAS (max-width: 480px)
+   3. SMARTPHONES COM TELAS PEQUENAS (max-width: 520px)
    -------------------------------------------------------------------------- */
-@media (max-width: 480px) {
+@media (max-width: 520px) {
   header {
-    padding: 14px 16px !important; /* Espaço ligeiramente menor em celulares muito pequenos */
+    padding: 12px 16px !important;
   }
 
   header h1 {
@@ -419,8 +372,8 @@
   }
 
   nav a {
-    font-size: 15px !important;
-    padding: 16px 0 !important;
+    font-size: 14.5px !important;
+    padding: 12px 0 !important;
   }
 
   #inicio h1 {
