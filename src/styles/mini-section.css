@@ -1,0 +1,13 @@
+.mini-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+  background: radial-gradient(ellipse 50% 100% at center, #3139727c, #1c214200);
+  padding: 30px 5%;
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  text-align: center;
+}

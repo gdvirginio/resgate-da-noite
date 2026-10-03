@@ -1,0 +1,376 @@
+body {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    background-color: black;
+    overflow: hidden;
+    color: white;
+}
+
+/* navegação / voltar */
+.simulador-nav {
+    position: fixed;
+    top: 16px;
+    left: 20px;
+    z-index: 10;
+}
+
+.btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    color: #e8c97a;
+    background: rgba(10, 12, 28, 0.75);
+    border: 1px solid rgba(232, 201, 122, 0.4);
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    backdrop-filter: blur(8px);
+    transition: all 0.25s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.btn-voltar:hover {
+    background: rgba(232, 201, 122, 0.2);
+    border-color: rgba(232, 201, 122, 0.85);
+    transform: translateY(-2px);
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(232, 201, 122, 0.25);
+}
+
+.btn-voltar svg {
+    transition: transform 0.25s ease;
+}
+
+.btn-voltar:hover svg {
+    transform: translateX(-3px);
+}
+
+/* título */
+h2 {
+    margin: 0;
+    padding: 16px;
+    text-align: center;
+    font-size: clamp(1.1rem, 3vw, 1.8rem);
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #e8c97a;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    pointer-events: none;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* guia */
+.guide {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+
+    padding: 10px 16px;
+    background: rgba(0, 0, 0, 0.55);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+
+    font-size: 0.92rem;
+    text-align: center;
+
+    max-width: 90vw;
+    pointer-events: none;
+}
+
+/* fundo */
+.fundo {
+    background-image: url("fundo1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    height: 100vh;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: -1;
+    backdrop-filter: blur(10px);
+}
+
+/* container da lanterna */
+.luiz {
+    position: fixed;
+    top: 90%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+    z-index: 9999;
+
+    width: clamp(140px, 40vw, 280px);
+    aspect-ratio: 1 / 1;
+}
+
+/* imagem da lanterna */
+.lantern {
+    width: 60%;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    bottom: 8%;
+    transform: translateX(-50%);
+    object-fit: contain;
+
+    /* sempre por cima */
+    z-index: 1;
+}
+
+
+/* luz */
+.light {
+    position: absolute;
+    left: 50%;
+    top: -60%;
+    transform: translateX(-50%);
+
+    width: clamp(280px, 120vw, 900px);
+    height: clamp(180px, 40vw, 260px);
+
+
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0.39));
+
+    clip-path: polygon(46% 98%,
+            28% 0%,
+            72% 0%,
+            54% 98%);
+
+    pointer-events: none;
+    z-index: 2;
+}
+
+.fundo1 {
+    position: absolute;
+    left: 50%;
+    /* um pouco acima da lanterna */
+    top: -179%;
+    transform: translateX(-50%);
+
+    width: 800px;
+    height: 600px;
+    background-color: rgb(0, 0, 0);
+
+    /* fundo atrás da lanterna */
+    clip-path: ellipse(55% 50% at 50% 50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* =========================
+   CONTROLES (joystick + botões)
+   Escondidos por padrão (desktop usa só o scroll do mouse).
+   Mostrados em telas touch / mobile via media queries abaixo.
+========================= */
+.controles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1000000;
+    display: none;
+}
+
+.joystick {
+    position: absolute;
+    left: 20px;
+    bottom: 70px;
+    width: 120px;
+    height: 120px;
+    pointer-events: auto;
+    touch-action: none;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+.joystick-base {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4px);
+}
+
+.joystick-stick {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.65);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: background 0.1s;
+    pointer-events: none;
+}
+
+.joystick-stick.ativo {
+    background: rgba(255, 230, 150, 0.6);
+}
+
+.botoes {
+    position: absolute;
+    right: 20px;
+    bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    pointer-events: auto;
+}
+
+.btn {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    color: #fff;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    font-family: inherit;
+}
+
+.btn:active {
+    background: rgba(255, 230, 150, 0.35);
+    transform: scale(0.94);
+}
+
+/* celular */
+/* =========================
+   RESPONSIVO CELULAR
+========================= */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .simulador-nav {
+        top: 10px;
+        left: 10px;
+    }
+
+    .btn-voltar {
+        padding: 6px 12px;
+        font-size: 0.78rem;
+        gap: 5px;
+    }
+
+    h2 {
+        font-size: 1.05rem;
+        padding-top: 14px;
+        letter-spacing: 1px;
+    }
+
+    .guide {
+        width: 85%;
+        font-size: 0.75rem;
+        bottom: 20px;
+    }
+
+    .luiz {
+        width: 180px;
+
+        left: 50%;
+        top: 88%;
+
+        transform: translate(-50%, -50%);
+    }
+
+    .lantern {
+        width: 70%;
+        bottom: 0;
+    }
+
+    .light {
+        left: 50%;
+        top: -104%;
+
+        transform: translateX(-50%);
+
+        width: 140vw;
+        height: 240px;
+
+        opacity: 0.9;
+
+        clip-path: polygon(45% 98%,
+                28% 0%,
+                72% 0%,
+                55% 98%);
+    }
+
+   .fundo1 {
+    position: absolute;
+    left: 50%;
+    top: -190%;
+    transform: translateX(-50%);
+
+    width: 500px;
+    height: 380px;
+
+    background-color: rgb(0, 0, 0);
+
+    clip-path: ellipse(50% 45% at 50% 50%);
+
+    z-index: 0;
+    pointer-events: none;
+}
+
+    .controles {
+        display: block;
+    }
+
+    .joystick {
+        left: 16px;
+        bottom: 80px;
+        width: 110px;
+        height: 110px;
+    }
+
+    .joystick-stick {
+        width: 50px;
+        height: 50px;
+    }
+
+    .botoes {
+        right: 16px;
+        bottom: 80px;
+    }
+}
+
+/* Dispositivos touch (celular/tablet), mesmo em telas largas */
+@media (hover: none) and (pointer: coarse) {
+    .controles {
+        display: block;
+    }
+}

@@ -1,0 +1,77 @@
+header {
+  background-color: #10121f;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  flex-wrap: wrap; /* Permite quebrar linha no mobile */
+  justify-content: space-between; /* Afasta a logo do menu */
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+header img {
+  width: 50px;
+  height: 50px;
+}
+
+header h1 {
+  color: white;
+  text-shadow: 0 -3px #ffe8bb7b;
+  font-size: clamp(1.2rem, 3vw, 1.8rem); /* Texto responsivo */
+  margin-left: 15px;
+  margin-right: auto; /* Empurra o menu para a direita */
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+@media (max-width: 900px) {
+  header {
+    justify-content: center;
+    flex-direction: column; /* Empilha logo e menu no celular */
+    text-align: center;
+  }
+  header h1 {
+    margin: 10px 0;
+  }
+}
+nav a {
+  text-decoration: none;
+  color: #e4d4b9;
+  font-weight: bolder;
+  transition: all 0.3s;
+}
+nav a:hover {
+  text-shadow: 0 0 5px #e4d4b9;
+}
+nav a.active {
+  transform: translateY(-2px);
+  border-bottom: 2px #e4d4b9 solid;
+}
+
+a.button {
+  color: #10121f;
+  background-color: #e4d4b9;
+  border-radius: 30px;
+  padding: 5px 10px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  font-size: 13pt;
+}
+
+a.button:hover {
+  cursor: pointer;
+  transform: translateX(2px);
+}
+/* Esconde o botão hambúrguer por padrão em computadores */
+.hamburger {
+  display: none;
+}

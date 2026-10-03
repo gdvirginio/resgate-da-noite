@@ -1,0 +1,57 @@
+/* ==========================================================================
+   SEÇÃO DE CHAMADA PARA O SIMULADOR
+   ========================================================================== */
+#chamada-simulador {
+  padding: 6rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  position: relative;
+  z-index: 5;
+}
+
+.simulador-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.simulador-texto {
+  color: #ddd5c0;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.simulador-texto strong {
+  color: #e8c97a;
+}
+
+/* BOTÃO COPIANDO O DESIGN SYSTEM DO INÍCIO */
+.btn-acessar-simulador {
+  display: inline-block;
+  margin: 0 auto;
+  color: #e4d4b9;
+  background-color: #4047764c;
+  border: 5px solid rgba(0, 0, 0, 0.4);
+  border-radius: 30px;
+  padding: 13px 30px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  font-size: 15pt;
+}
+
+.btn-acessar-simulador:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.simulador-conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p.section-subtitle-1 {
+  display: flex;
+  align-items: flex-start;
+
+}

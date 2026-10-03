@@ -1,0 +1,131 @@
+#respostas {
+  padding: 6rem 1.5rem;
+  position: relative;
+  z-index: 5;
+}
+
+.respostas-container {
+  max-width: 1240px; /* Aumentado ligeiramente para acomodar os 3 cards lado a lado */
+  margin: 0 auto;
+}
+
+/* Header dos Dados */
+.section-header-dados {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header-dados .subtitle-dados {
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: #6a6a8a;
+}
+
+.section-header-dados .title-dados {
+  margin-top: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: clamp(2.1rem, 4vw, 2.8rem);
+  letter-spacing: -0.01em;
+}
+
+.section-header-dados .glow-bar-dados {
+  margin-top: 20px;
+  width: 80px;
+  height: 3px;
+  background: #e8c97a;
+  box-shadow: 0 0 14px rgba(232, 201, 122, 0.7);
+  border-radius: 2px;
+}
+
+/* Card do Contador */
+.contador-card {
+  background: radial-gradient(circle at 50% 50%, rgba(232, 201, 122, 0.05), transparent);
+  background-color: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 20px 40px -30px rgba(0, 0, 0, 0.7);
+  margin-bottom: 40px;
+}
+
+.contador-label {
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  color: #6a6a8a;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.contador-numero {
+  font-size: clamp(4rem, 8vw, 5.5rem);
+  color: #e8c97a;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-top: 12px;
+  text-shadow: 0 0 30px rgba(232, 201, 122, 0.25);
+}
+
+/* Estado de Erro */
+.erro-mensagem {
+  background: rgba(248, 113, 113, 0.05);
+  border: 1px solid rgba(248, 113, 113, 0.15);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  color: #f87171;
+  margin-bottom: 32px;
+}
+
+/* Grid responsivo triplo */
+.graficos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.grafico-card {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  height: 380px;
+}
+
+.grafico-titulo {
+  font-size: 13px;
+  color: #9090b0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.canvas-wrapper {
+  flex: 1;
+  position: relative;
+  width: 100%;
+}
+
+.loading-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6a6a8a;
+  font-size: 13px;
+}
